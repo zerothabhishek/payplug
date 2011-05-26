@@ -1,0 +1,31 @@
+
+
+Started GET "/payplug/cart" for 127.0.0.1 at 2011-05-26 15:05:51 +0530
+
+
+Started GET "/" for 127.0.0.1 at 2011-05-26 15:07:58 +0530
+
+
+Started GET "/payplug/paypal" for 127.0.0.1 at 2011-05-26 15:12:35 +0530
+  Processing by Payplug::CallbacksController#paypal as HTML
+Completed 500 Internal Server Error in 92ms
+
+
+Started GET "/payplug/cart" for 127.0.0.1 at 2011-05-26 15:18:47 +0530
+  Processing by Payplug::CartsController#show as HTML
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/show.html.erb within layouts/payplug/application (13.3ms)
+Completed 200 OK in 56ms (Views: 55.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/payplug/cart/1" for 127.0.0.1 at 2011-05-26 15:19:35 +0530
+  Processing by Payplug::CartsController#show as HTML
+  Parameters: {"id"=>"1"}
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/show.html.erb within layouts/payplug/application (13.0ms)
+Completed 200 OK in 54ms (Views: 54.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/payplug/cart/1" for 127.0.0.1 at 2011-05-26 15:20:06 +0530
+  Processing by Payplug::CartsController#show as HTML
+  Parameters: {"id"=>"1"}
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/show.html.erb within layouts/payplug/application (12.8ms)
+Completed 200 OK in 53ms (Views: 53.2ms | ActiveRecord: 0.0ms)

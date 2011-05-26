@@ -1,0 +1,204 @@
+
+
+Started GET "/" for 127.0.0.1 at 2011-05-26 15:15:28 +0530
+
+ActionController::RoutingError (No route matches [GET] "/"):
+  
+
+Rendered /Users/abhishekyadav/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.0.rc1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1512.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-05-26 15:15:32 +0530
+
+ActionController::RoutingError (No route matches [GET] "/"):
+  
+
+Rendered /Users/abhishekyadav/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.0.rc1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/payplug/cart" for 127.0.0.1 at 2011-05-26 15:15:42 +0530
+
+ActionController::RoutingError (No route matches [GET] "/payplug/cart"):
+  
+
+Rendered /Users/abhishekyadav/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.0.rc1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/payplug/cart" for 127.0.0.1 at 2011-05-26 15:15:42 +0530
+
+ActionController::RoutingError (No route matches [GET] "/payplug/cart"):
+  
+
+Rendered /Users/abhishekyadav/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.0.rc1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/payplug/paypal" for 127.0.0.1 at 2011-05-26 15:15:50 +0530
+  Processing by Payplug::CallbacksController#paypal as HTML
+Completed 500 Internal Server Error in 48ms
+
+ActionView::MissingTemplate (Missing template payplug/callbacks/paypal, payplug/application/paypal with {:handlers=>[:erb, :builder], :formats=>[:html], :locale=>[:en, :en]}. Searched in:
+  * "/Users/abhishekyadav/code/visoke/payplug/spec/dummy/app/views"
+  * "/Users/abhishekyadav/code/visoke/payplug/app/views"
+):
+  
+
+Rendered /Users/abhishekyadav/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.0.rc1/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.5ms)
+
+
+Started GET "/payplug/paypal" for 127.0.0.1 at 2011-05-26 15:15:50 +0530
+  Processing by Payplug::CallbacksController#paypal as */*
+Completed 500 Internal Server Error in 15ms
+
+ActionView::MissingTemplate (Missing template payplug/callbacks/paypal, payplug/application/paypal with {:handlers=>[:erb, :builder], :formats=>[:html, :text, :js, :css, :ics, :csv, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json], :locale=>[:en, :en]}. Searched in:
+  * "/Users/abhishekyadav/code/visoke/payplug/spec/dummy/app/views"
+  * "/Users/abhishekyadav/code/visoke/payplug/app/views"
+):
+  
+
+Rendered /Users/abhishekyadav/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.0.rc1/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.8ms)
+
+
+Started GET "/payplug/cart/2" for 127.0.0.1 at 2011-05-26 15:15:58 +0530
+  Processing by Payplug::CartsController#show as HTML
+  Parameters: {"id"=>"2"}
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/show.html.erb within layouts/payplug/application (0.4ms)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-05-26 15:15:59 +0530
+Compiled ~/code/visoke/payplug/spec/dummy/app/assets/stylesheets/application.css  (14ms)  (pid 16007)
+Compiled ~/code/visoke/payplug/spec/dummy/app/assets/stylesheets/application.css  (0ms)  (pid 16007)
+
+Served asset /application.css - 200 OK  (0.017s)  (pid 16007)
+
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-05-26 15:15:59 +0530
+Error compiling asset application.js:
+Sprockets::FileNotFound: couldn't find file 'jquery'
+  (in /Users/abhishekyadav/code/visoke/payplug/spec/dummy/app/assets/javascripts/application.js):7
+
+Served asset /application.js - 500 Internal Server Error
+
+
+
+Started GET "/payplug/cart/2" for 127.0.0.1 at 2011-05-26 15:15:59 +0530
+  Processing by Payplug::CartsController#show as */*
+  Parameters: {"id"=>"2"}
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/show.html.erb within layouts/payplug/application (0.4ms)
+Completed 200 OK in 13ms (Views: 13.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/payplug/cart/2" for 127.0.0.1 at 2011-05-26 15:16:28 +0530
+
+ActionController::RoutingError (No route matches [GET] "/payplug/cart/2"):
+  
+
+Rendered /Users/abhishekyadav/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.0.rc1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/payplug/cart/2" for 127.0.0.1 at 2011-05-26 15:16:28 +0530
+
+ActionController::RoutingError (No route matches [GET] "/payplug/cart/2"):
+  
+
+Rendered /Users/abhishekyadav/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.0.rc1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/payplug/cart" for 127.0.0.1 at 2011-05-26 15:16:32 +0530
+  Processing by Payplug::CartsController#show as HTML
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/show.html.erb within layouts/payplug/application (0.0ms)
+Completed 200 OK in 37ms (Views: 36.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/payplug/cart" for 127.0.0.1 at 2011-05-26 15:16:32 +0530
+  Processing by Payplug::CartsController#show as */*
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/show.html.erb within layouts/payplug/application (0.0ms)
+Completed 200 OK in 12ms (Views: 11.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-05-26 15:16:32 +0530
+Error compiling asset application.js:
+Sprockets::FileNotFound: couldn't find file 'jquery'
+  (in /Users/abhishekyadav/code/visoke/payplug/spec/dummy/app/assets/javascripts/application.js):7
+
+Served asset /application.js - 500 Internal Server Error
+
+
+
+Started GET "/payplug/cart" for 127.0.0.1 at 2011-05-26 15:16:55 +0530
+  Processing by Payplug::CartsController#show as HTML
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/show.html.erb within layouts/payplug/application (19.3ms)
+Completed 200 OK in 24ms (Views: 23.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/payplug/cart" for 127.0.0.1 at 2011-05-26 15:16:55 +0530
+  Processing by Payplug::CartsController#show as */*
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/show.html.erb within layouts/payplug/application (0.4ms)
+Completed 200 OK in 13ms (Views: 12.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-05-26 15:16:55 +0530
+Error compiling asset application.js:
+Sprockets::FileNotFound: couldn't find file 'jquery'
+  (in /Users/abhishekyadav/code/visoke/payplug/spec/dummy/app/assets/javascripts/application.js):7
+
+Served asset /application.js - 500 Internal Server Error
+
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-05-26 15:16:55 +0530
+
+Served asset /application.css - 304 Not Modified  (0.00034s)  (pid 16007)
+
+
+
+Started GET "/payplug/cart" for 127.0.0.1 at 2011-05-26 15:17:04 +0530
+  Processing by Payplug::CartsController#show as HTML
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/show.html.erb within layouts/payplug/application (0.4ms)
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/payplug/cart" for 127.0.0.1 at 2011-05-26 15:17:04 +0530
+  Processing by Payplug::CartsController#show as */*
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/show.html.erb within layouts/payplug/application (0.4ms)
+Completed 200 OK in 12ms (Views: 12.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-05-26 15:17:04 +0530
+
+Served asset /application.css - 304 Not Modified  (0.000483s)  (pid 16007)
+
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-05-26 15:17:04 +0530
+Error compiling asset application.js:
+Sprockets::FileNotFound: couldn't find file 'jquery'
+  (in /Users/abhishekyadav/code/visoke/payplug/spec/dummy/app/assets/javascripts/application.js):7
+
+Served asset /application.js - 500 Internal Server Error
+
+
+
+Started GET "/payplug/google" for 127.0.0.1 at 2011-05-26 15:17:53 +0530
+  Processing by Payplug::CallbacksController#google as HTML
+Rendered text template (0.0ms)
+Completed 200 OK in 43ms (Views: 42.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/payplug/google" for 127.0.0.1 at 2011-05-26 15:17:53 +0530
+  Processing by Payplug::CallbacksController#google as */*
+Rendered text template (0.0ms)
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/payplug/paypal" for 127.0.0.1 at 2011-05-26 15:17:57 +0530
+  Processing by Payplug::CallbacksController#paypal as HTML
+Rendered text template (0.0ms)
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/payplug/paypal" for 127.0.0.1 at 2011-05-26 15:17:57 +0530
+  Processing by Payplug::CallbacksController#paypal as */*
+Rendered text template (0.0ms)
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms)
