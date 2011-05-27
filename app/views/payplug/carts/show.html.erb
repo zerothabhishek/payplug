@@ -1,1 +1,20 @@
-This is a cart
+<h1>Shopping Cart</h1>
+
+<% @cart.items.each do |item| %>
+	<div>|- <%= item.name %> -|- <%= item.quantity %> -|- <%= item.price %> -|</div>	
+<% end %>	
+<div>
+	total: <%= @cart.total_amount %>
+</div>
+
+<div class="paypal form">
+	<%= render :partial => "paypal_form" %>
+</div>
+
+<div class="google_checkout form">
+	<%= render :partial => "google_checkout_form" %>
+</div>
+
+<div class="amazon_checkout form">
+	<%= render :partial => "amazon_checkout_form" %>
+</div>

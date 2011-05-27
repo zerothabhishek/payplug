@@ -1,25 +1,21 @@
 require "payplug/engine"
+require "payplug/cart"
+require "payplug/gateway"
+require "payplug/paypal"
+require "payplug/google_checkout"
 
 module Payplug
-
-  mattr_accessor :gateways
-  @@gateways = []
   
-  mattr_accessor :cart_class
-  @@cart_class = nil
+  mattr_accessor :settings
+  @@settings = {}
   
-  mattr_accessor :item_class
-  @@item_class = nil
-  
-  def self.setup
-    yield self
-  end
-
-  def self.cart_class=(klass, mappings)
-    @cart_class = klass 
+  def self.init
+    cart_klass = @@settings[:cart][:klass]  
+    cart_klass.send(:include, Payplug::Cart)
+    Payplug::Cart.cart_map = @@settings[:cart_map]
   end
   
-  def self.load_payplug_yaml
+  def notify_url
   end
   
 end
