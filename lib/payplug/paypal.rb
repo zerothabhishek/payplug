@@ -10,11 +10,16 @@ module Payplug
     cattr_accessor :upload
     @@upload = "1"
     
-    def self.notify_url
-      paypal_url
-    end
+    cattr_accessor :notify_url
+    @@notify_url = nil   
+
+    cattr_accessor :submit_url
+    @@submit_url = ""   
     
-    def self.submit_url      
+    def self.init
+      @@email = Payplug.config["paypal"]["email"]
+      @@secret = Payplug.config["paypal"]["secret"]
+      @@notify_url = Payplug.return_url   
     end
     
   end

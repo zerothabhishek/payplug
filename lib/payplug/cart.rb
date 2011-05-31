@@ -1,21 +1,21 @@
 module Payplug
   module Cart  
     
-    cattr_accessor :cart_map
-    @@cart_map = {}
+    def self.extended(base)    # extend callback
+      method_map = base.class.payplug_transform
+      method_map.each_pair do |required_method, existing_method|
+        self.send(:define_method, required_method) do          # self here is the Payplug::Cart module itself
+          self.send(existing_method)                           # self here is the object that is getting extended
+        end
+      end
+    end
         
-    def total_amount
-      items.inject{|sum, i| sum + (i.price*i.quantity) }
-    end
-          
-    def return_url
-    end      
-    
     def items
-      cart_klass = Payplug.settings[:cart][:klass]
-      cart_items_method_name = Payplug.settings[:cart][:items].to_s
-      cart_klass.send(cart_items_method_name)
+      method_name = Payplug.item_klass.to_s.underscore.pluralize            # getting line_items from LineItem
+      original_items = self.send(method_name)                               # @cart.line_items
+      extended_items = original_items.map{|i| i.extend(Payplug::Item) }     # extend each item with Payplug::Item
+      extended_items
     end
-    
+      
   end
 end

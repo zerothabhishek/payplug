@@ -6,6 +6,7 @@ gem 'rails', '3.1.0.rc1'
 # gem 'rails',     :path => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
+gem 'ruby-debug19'
 
 if RUBY_VERSION < '1.9'
   gem "ruby-debug", ">= 0.10.3"
