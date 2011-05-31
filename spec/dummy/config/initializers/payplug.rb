@@ -1,10 +1,7 @@
 
-Payplug.settings = {
-  :gateways => [:paypal, :google_checkout, :amazon_checkout],
-  :cart => {:klass => Order, :items => "line_items", :return_url => ""},
-
-  :cart_map => { :total_amount => "amount", :id => "id", :currency => "currency" },
-  :item_map => { :price => "cost", :quantity => "qty", :name => "name", :id => "id" }
-}
-
-Payplug.init
+Payplug.init do |config|
+  config.gateways = [:paypal, :google_checkout, :amazon_checkout]
+  config.cart_klass = Order
+  config.item_klass = LineItem
+  config.return_url = "/thanks"
+end

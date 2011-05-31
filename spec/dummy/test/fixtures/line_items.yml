@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  price: 1
+  xyz_name: MyString
+  order_id: 1
+  qty: 1
+  discount_code: MyString
+
+two:
+  price: 1
+  xyz_name: MyString
+  order_id: 1
+  qty: 1
+  discount_code: MyString

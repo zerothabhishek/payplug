@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  status: false
+  currency: MyString
+  mode: MyString
+  amount: 1
+  purchased_at: 2011-05-30 15:48:21
+
+two:
+  status: false
+  currency: MyString
+  mode: MyString
+  amount: 1
+  purchased_at: 2011-05-30 15:48:21

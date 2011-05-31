@@ -1,0 +1,22 @@
+development:
+  paypal:
+    email:  paypal_sandbox_email
+    secret: paypal_sandbox_secret
+  google_checkout:
+    email: "google_checkout_sandbox_email"
+    secret: "google_checkout_sandbox_secret"
+  amazon_checkout:
+    email: "amazon_checkout_sandbox_email"
+    secret: "amazon_checkout_sandbox_secret"
+
+
+production:
+  paypal:
+    email: "paypal_email"
+    secret: "paypal_secret"
+  google_checkout:
+    email: "google_checkout_email"
+    secret: "google_checkout_secret"
+  amazon_checkout:
+    email: "amazon_checkout_email"
+    secret: "amazon_checkout_secret"
