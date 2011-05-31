@@ -1728,3 +1728,629 @@ Sprockets::FileNotFound: couldn't find file 'jquery'
 
 Served asset /application.js - 500 Internal Server Error
 
+
+***** Debugger requested, but was not available (ensure ruby-debug is listed in Gemfile/installed as gem): Start server with --debugger to enable *****
+
+
+Started GET "/payplug/cart/2" for 127.0.0.1 at 2011-05-31 23:37:15 +0530
+  Processing by Payplug::CartsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mOrder Load (0.2ms)[0m  [1mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT 1[0m  [["id", "2"]]
+  [1m[35mLineItem Load (25.6ms)[0m  SELECT "line_items".* FROM "line_items" WHERE "line_items"."order_id" = 2
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/_paypal_form.html.erb (2.6ms)
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/_google_checkout_form.html.erb (0.9ms)
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/_amazon_checkout_form.html.erb (0.7ms)
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/show.html.erb within layouts/payplug/application (233.1ms)
+Completed 200 OK in 402ms (Views: 257.8ms | ActiveRecord: 27.6ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-05-31 23:37:16 +0530
+Compiled ~/code/visoke/payplug/spec/dummy/app/assets/stylesheets/application.css  (18ms)  (pid 1053)
+
+Served asset /application.css - 304 Not Modified  (0.0199s)  (pid 1053)
+
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-05-31 23:37:16 +0530
+Error compiling asset application.js:
+Sprockets::FileNotFound: couldn't find file 'jquery'
+  (in /Users/abhishekyadav/code/visoke/payplug/spec/dummy/app/assets/javascripts/application.js):7
+
+Served asset /application.js - 500 Internal Server Error
+
+
+
+Started GET "/payplug/cart/2" for 127.0.0.1 at 2011-05-31 23:40:34 +0530
+  Processing by Payplug::CartsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mOrder Load (0.1ms)[0m  [1mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT 1[0m  [["id", "2"]]
+  [1m[35mLineItem Load (0.2ms)[0m  SELECT "line_items".* FROM "line_items" WHERE "line_items"."order_id" = 2
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/_paypal_form.html.erb (1.6ms)
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/_google_checkout_form.html.erb (0.2ms)
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/_amazon_checkout_form.html.erb (0.2ms)
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/show.html.erb within layouts/payplug/application (12.9ms)
+Completed 200 OK in 22ms (Views: 16.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-05-31 23:40:34 +0530
+Error compiling asset application.js:
+Sprockets::FileNotFound: couldn't find file 'jquery'
+  (in /Users/abhishekyadav/code/visoke/payplug/spec/dummy/app/assets/javascripts/application.js):7
+
+Served asset /application.js - 500 Internal Server Error
+
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-05-31 23:40:34 +0530
+
+Served asset /application.css - 304 Not Modified  (0.000348s)  (pid 1053)
+
+
+
+Started GET "/payplug/cart/2" for 127.0.0.1 at 2011-05-31 23:42:40 +0530
+  Processing by Payplug::CartsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mOrder Load (1.3ms)[0m  [1mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT 1[0m  [["id", "2"]]
+  [1m[35mLineItem Load (0.2ms)[0m  SELECT "line_items".* FROM "line_items" WHERE "line_items"."order_id" = 2
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/_paypal_form.html.erb (1.8ms)
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/_google_checkout_form.html.erb (0.2ms)
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/_amazon_checkout_form.html.erb (0.2ms)
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/show.html.erb within layouts/payplug/application (12.0ms)
+Completed 200 OK in 26ms (Views: 15.8ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-05-31 23:42:40 +0530
+Error compiling asset application.js:
+Sprockets::FileNotFound: couldn't find file 'jquery'
+  (in /Users/abhishekyadav/code/visoke/payplug/spec/dummy/app/assets/javascripts/application.js):7
+
+Served asset /application.js - 500 Internal Server Error
+
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-05-31 23:42:40 +0530
+
+Served asset /application.css - 304 Not Modified  (0.000323s)  (pid 1053)
+
+
+
+Started GET "/payplug/cart/2" for 127.0.0.1 at 2011-05-31 23:43:35 +0530
+  Processing by Payplug::CartsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mOrder Load (0.2ms)[0m  [1mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT 1[0m  [["id", "2"]]
+  [1m[35mLineItem Load (0.3ms)[0m  SELECT "line_items".* FROM "line_items" WHERE "line_items"."order_id" = 2
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/_paypal_form.html.erb (1.6ms)
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/_google_checkout_form.html.erb (0.2ms)
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/_amazon_checkout_form.html.erb (0.2ms)
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/show.html.erb within layouts/payplug/application (11.4ms)
+Completed 200 OK in 56ms (Views: 15.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-05-31 23:43:35 +0530
+Error compiling asset application.js:
+Sprockets::FileNotFound: couldn't find file 'jquery'
+  (in /Users/abhishekyadav/code/visoke/payplug/spec/dummy/app/assets/javascripts/application.js):7
+
+Served asset /application.js - 500 Internal Server Error
+
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-05-31 23:43:35 +0530
+
+Served asset /application.css - 304 Not Modified  (0.000333s)  (pid 1053)
+
+
+
+Started GET "/payplug/cart/2" for 127.0.0.1 at 2011-05-31 23:57:01 +0530
+  Processing by Payplug::CartsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mOrder Load (0.2ms)[0m  [1mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT 1[0m  [["id", "2"]]
+  [1m[35mLineItem Load (0.2ms)[0m  SELECT "line_items".* FROM "line_items" WHERE "line_items"."order_id" = 2
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/_paypal_form.html.erb (2.6ms)
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/_google_checkout_form.html.erb (0.6ms)
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/_amazon_checkout_form.html.erb (0.5ms)
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/show.html.erb within layouts/payplug/application (145.0ms)
+Completed 200 OK in 336ms (Views: 243.1ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-05-31 23:57:01 +0530
+Error compiling asset application.js:
+Sprockets::FileNotFound: couldn't find file 'jquery'
+  (in /Users/abhishekyadav/code/visoke/payplug/spec/dummy/app/assets/javascripts/application.js):7
+
+Served asset /application.js - 500 Internal Server Error
+
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-05-31 23:57:01 +0530
+Compiled ~/code/visoke/payplug/spec/dummy/app/assets/stylesheets/application.css  (0ms)  (pid 1080)
+
+Served asset /application.css - 304 Not Modified  (0.0028s)  (pid 1080)
+
+
+
+Started GET "/payplug/cart/2" for 127.0.0.1 at 2011-06-01 00:06:04 +0530
+  Processing by Payplug::CartsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mOrder Load (0.1ms)[0m  [1mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT 1[0m  [["id", "2"]]
+  [1m[35mLineItem Load (30.2ms)[0m  SELECT "line_items".* FROM "line_items" WHERE "line_items"."order_id" = 2
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/_paypal_form.html.erb (2.2ms)
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/_google_checkout_form.html.erb (0.2ms)
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/_amazon_checkout_form.html.erb (0.2ms)
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/show.html.erb within layouts/payplug/application (43.0ms)
+Completed 200 OK in 58ms (Views: 22.6ms | ActiveRecord: 31.0ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-01 00:06:04 +0530
+
+Served asset /application.css - 304 Not Modified  (0.000438s)  (pid 1080)
+
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-06-01 00:06:04 +0530
+Error compiling asset application.js:
+Sprockets::FileNotFound: couldn't find file 'jquery'
+  (in /Users/abhishekyadav/code/visoke/payplug/spec/dummy/app/assets/javascripts/application.js):7
+
+Served asset /application.js - 500 Internal Server Error
+
+
+
+Started GET "/payplug/cart/2" for 127.0.0.1 at 2011-06-01 00:24:37 +0530
+  Processing by Payplug::CartsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mOrder Load (0.2ms)[0m  [1mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT 1[0m  [["id", "2"]]
+  [1m[35mLineItem Load (0.2ms)[0m  SELECT "line_items".* FROM "line_items" WHERE "line_items"."order_id" = 2
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/_paypal_form.html.erb (1.7ms)
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/_google_checkout_form.html.erb (0.2ms)
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/_amazon_checkout_form.html.erb (0.2ms)
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/show.html.erb within layouts/payplug/application (11.2ms)
+Completed 200 OK in 36ms (Views: 28.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-01 00:24:38 +0530
+
+Served asset /application.css - 304 Not Modified  (0.00034s)  (pid 1080)
+
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-06-01 00:24:38 +0530
+Error compiling asset application.js:
+Sprockets::FileNotFound: couldn't find file 'jquery'
+  (in /Users/abhishekyadav/code/visoke/payplug/spec/dummy/app/assets/javascripts/application.js):7
+
+Served asset /application.js - 500 Internal Server Error
+
+
+
+Started GET "/payplug/cart/2" for 127.0.0.1 at 2011-06-01 00:25:51 +0530
+  Processing by Payplug::CartsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mOrder Load (0.2ms)[0m  [1mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT 1[0m  [["id", "2"]]
+  [1m[35mLineItem Load (0.2ms)[0m  SELECT "line_items".* FROM "line_items" WHERE "line_items"."order_id" = 2
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/_paypal_form.html.erb (1.7ms)
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/_google_checkout_form.html.erb (0.2ms)
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/_amazon_checkout_form.html.erb (0.2ms)
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/show.html.erb within layouts/payplug/application (11.7ms)
+Completed 200 OK in 64ms (Views: 15.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-01 00:25:51 +0530
+
+Served asset /application.css - 304 Not Modified  (0.000364s)  (pid 1080)
+
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-06-01 00:25:51 +0530
+Error compiling asset application.js:
+Sprockets::FileNotFound: couldn't find file 'jquery'
+  (in /Users/abhishekyadav/code/visoke/payplug/spec/dummy/app/assets/javascripts/application.js):7
+
+Served asset /application.js - 500 Internal Server Error
+
+
+
+Started GET "/payplug/cart/2" for 127.0.0.1 at 2011-06-01 00:25:55 +0530
+  Processing by Payplug::CartsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mOrder Load (0.1ms)[0m  [1mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT 1[0m  [["id", "2"]]
+  [1m[35mLineItem Load (0.2ms)[0m  SELECT "line_items".* FROM "line_items" WHERE "line_items"."order_id" = 2
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/_paypal_form.html.erb (1.6ms)
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/_google_checkout_form.html.erb (0.2ms)
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/_amazon_checkout_form.html.erb (0.2ms)
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/show.html.erb within layouts/payplug/application (11.1ms)
+Completed 200 OK in 21ms (Views: 15.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-01 00:25:56 +0530
+
+Served asset /application.css - 304 Not Modified  (0.000308s)  (pid 1080)
+
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-06-01 00:25:56 +0530
+Error compiling asset application.js:
+Sprockets::FileNotFound: couldn't find file 'jquery'
+  (in /Users/abhishekyadav/code/visoke/payplug/spec/dummy/app/assets/javascripts/application.js):7
+
+Served asset /application.js - 500 Internal Server Error
+
+
+
+Started GET "/payplug/cart/2" for 127.0.0.1 at 2011-06-01 00:26:14 +0530
+  Processing by Payplug::CartsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mOrder Load (0.4ms)[0m  [1mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT 1[0m  [["id", "2"]]
+  [1m[35mLineItem Load (0.2ms)[0m  SELECT "line_items".* FROM "line_items" WHERE "line_items"."order_id" = 2
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/_paypal_form.html.erb (2.6ms)
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/_google_checkout_form.html.erb (0.6ms)
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/_amazon_checkout_form.html.erb (0.5ms)
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/show.html.erb within layouts/payplug/application (163.9ms)
+Completed 200 OK in 301ms (Views: 203.5ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-06-01 00:26:15 +0530
+Error compiling asset application.js:
+Sprockets::FileNotFound: couldn't find file 'jquery'
+  (in /Users/abhishekyadav/code/visoke/payplug/spec/dummy/app/assets/javascripts/application.js):7
+
+Served asset /application.js - 500 Internal Server Error
+
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-01 00:26:15 +0530
+Compiled ~/code/visoke/payplug/spec/dummy/app/assets/stylesheets/application.css  (1ms)  (pid 1110)
+
+Served asset /application.css - 304 Not Modified  (0.00513s)  (pid 1110)
+
+
+
+Started GET "/payplug/cart/2" for 127.0.0.1 at 2011-06-01 00:31:12 +0530
+  Processing by Payplug::CartsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mOrder Load (0.2ms)[0m  [1mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT 1[0m  [["id", "2"]]
+  [1m[35mLineItem Load (29.2ms)[0m  SELECT "line_items".* FROM "line_items" WHERE "line_items"."order_id" = 2
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/_paypal_form.html.erb (1.9ms)
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/_google_checkout_form.html.erb (0.2ms)
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/_amazon_checkout_form.html.erb (0.2ms)
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/show.html.erb within layouts/payplug/application (41.6ms)
+Completed 200 OK in 66ms (Views: 31.2ms | ActiveRecord: 30.0ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-06-01 00:31:12 +0530
+Error compiling asset application.js:
+Sprockets::FileNotFound: couldn't find file 'jquery'
+  (in /Users/abhishekyadav/code/visoke/payplug/spec/dummy/app/assets/javascripts/application.js):7
+
+Served asset /application.js - 500 Internal Server Error
+
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-01 00:31:12 +0530
+
+Served asset /application.css - 304 Not Modified  (0.000348s)  (pid 1110)
+
+
+
+Started GET "/payplug/cart/2" for 127.0.0.1 at 2011-06-01 01:02:59 +0530
+  Processing by Payplug::CartsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mOrder Load (0.5ms)[0m  [1mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT 1[0m  [["id", "2"]]
+  [1m[35mLineItem Load (16.3ms)[0m  SELECT "line_items".* FROM "line_items" WHERE "line_items"."order_id" = 2
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/_paypal_form.html.erb (40.1ms)
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/_google_checkout_form.html.erb (0.4ms)
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/_amazon_checkout_form.html.erb (0.5ms)
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/show.html.erb within layouts/payplug/application (162.9ms)
+Completed 200 OK in 459ms (Views: 239.5ms | ActiveRecord: 19.0ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-01 01:03:00 +0530
+
+Served asset /application.css - 304 Not Modified  (0.0015s)  (pid 1110)
+
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-06-01 01:03:01 +0530
+Error compiling asset application.js:
+Sprockets::FileNotFound: couldn't find file 'jquery'
+  (in /Users/abhishekyadav/code/visoke/payplug/spec/dummy/app/assets/javascripts/application.js):7
+
+Served asset /application.js - 500 Internal Server Error
+
+
+
+Started GET "/payplug/cart/2" for 127.0.0.1 at 2011-06-01 02:06:14 +0530
+  Processing by Payplug::CartsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mOrder Load (0.1ms)[0m  [1mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT 1[0m  [["id", "2"]]
+  [1m[35mLineItem Load (19.7ms)[0m  SELECT "line_items".* FROM "line_items" WHERE "line_items"."order_id" = 2
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/_paypal_form.html.erb (2.6ms)
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/_google_checkout_form.html.erb (0.4ms)
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/_amazon_checkout_form.html.erb (0.3ms)
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/show.html.erb within layouts/payplug/application (81.7ms)
+Completed 200 OK in 171ms (Views: 130.0ms | ActiveRecord: 20.6ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-01 02:06:18 +0530
+
+Served asset /application.css - 304 Not Modified  (0.000404s)  (pid 1110)
+
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-06-01 02:06:18 +0530
+Error compiling asset application.js:
+Sprockets::FileNotFound: couldn't find file 'jquery'
+  (in /Users/abhishekyadav/code/visoke/payplug/spec/dummy/app/assets/javascripts/application.js):7
+
+Served asset /application.js - 500 Internal Server Error
+
+
+
+Started GET "/payplug/cart/2" for 127.0.0.1 at 2011-06-01 02:08:14 +0530
+  Processing by Payplug::CartsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mOrder Load (0.2ms)[0m  [1mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT 1[0m  [["id", "2"]]
+  [1m[35mLineItem Load (0.3ms)[0m  SELECT "line_items".* FROM "line_items" WHERE "line_items"."order_id" = 2
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/_paypal_form.html.erb (1.7ms)
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/_google_checkout_form.html.erb (0.2ms)
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/_amazon_checkout_form.html.erb (0.2ms)
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/show.html.erb within layouts/payplug/application (26.0ms)
+Completed 200 OK in 100ms (Views: 19.8ms | ActiveRecord: 11.0ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-01 02:08:15 +0530
+
+Served asset /application.css - 304 Not Modified  (0.00039s)  (pid 1110)
+
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-06-01 02:08:15 +0530
+Error compiling asset application.js:
+Sprockets::FileNotFound: couldn't find file 'jquery'
+  (in /Users/abhishekyadav/code/visoke/payplug/spec/dummy/app/assets/javascripts/application.js):7
+
+Served asset /application.js - 500 Internal Server Error
+
+
+
+Started GET "/payplug/cart/2" for 127.0.0.1 at 2011-06-01 02:08:17 +0530
+  Processing by Payplug::CartsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mOrder Load (0.2ms)[0m  [1mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT 1[0m  [["id", "2"]]
+  [1m[35mLineItem Load (0.2ms)[0m  SELECT "line_items".* FROM "line_items" WHERE "line_items"."order_id" = 2
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/_paypal_form.html.erb (1.6ms)
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/_google_checkout_form.html.erb (0.2ms)
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/_amazon_checkout_form.html.erb (0.2ms)
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/show.html.erb within layouts/payplug/application (10.6ms)
+Completed 200 OK in 20ms (Views: 14.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-01 02:08:17 +0530
+
+Served asset /application.css - 304 Not Modified  (0.00034s)  (pid 1110)
+
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-06-01 02:08:17 +0530
+Error compiling asset application.js:
+Sprockets::FileNotFound: couldn't find file 'jquery'
+  (in /Users/abhishekyadav/code/visoke/payplug/spec/dummy/app/assets/javascripts/application.js):7
+
+Served asset /application.js - 500 Internal Server Error
+
+
+
+Started GET "/payplug/cart/2" for 127.0.0.1 at 2011-06-01 02:17:52 +0530
+  Processing by Payplug::CartsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mOrder Load (0.2ms)[0m  [1mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT 1[0m  [["id", "2"]]
+  [1m[35mLineItem Load (0.2ms)[0m  SELECT "line_items".* FROM "line_items" WHERE "line_items"."order_id" = 2
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/_paypal_form.html.erb (1.7ms)
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/_google_checkout_form.html.erb (0.3ms)
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/_amazon_checkout_form.html.erb (0.2ms)
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/show.html.erb within layouts/payplug/application (11.7ms)
+Completed 200 OK in 22ms (Views: 16.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-06-01 02:17:52 +0530
+Error compiling asset application.js:
+Sprockets::FileNotFound: couldn't find file 'jquery'
+  (in /Users/abhishekyadav/code/visoke/payplug/spec/dummy/app/assets/javascripts/application.js):7
+
+Served asset /application.js - 500 Internal Server Error
+
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-01 02:17:52 +0530
+
+Served asset /application.css - 304 Not Modified  (0.000354s)  (pid 1110)
+
+
+
+Started GET "/payplug/cart/2" for 127.0.0.1 at 2011-06-01 02:28:00 +0530
+  Processing by Payplug::CartsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mOrder Load (0.2ms)[0m  [1mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT 1[0m  [["id", "2"]]
+  [1m[35mLineItem Load (0.3ms)[0m  SELECT "line_items".* FROM "line_items" WHERE "line_items"."order_id" = 2
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/_paypal_form.html.erb (61.9ms)
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/_google_checkout_form.html.erb (0.2ms)
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/_amazon_checkout_form.html.erb (0.2ms)
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/show.html.erb within layouts/payplug/application (73.0ms)
+Completed 200 OK in 123ms (Views: 77.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-01 02:28:01 +0530
+
+Served asset /application.css - 304 Not Modified  (0.000337s)  (pid 1110)
+
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-06-01 02:28:01 +0530
+Error compiling asset application.js:
+Sprockets::FileNotFound: couldn't find file 'jquery'
+  (in /Users/abhishekyadav/code/visoke/payplug/spec/dummy/app/assets/javascripts/application.js):7
+
+Served asset /application.js - 500 Internal Server Error
+
+
+
+Started GET "/payplug/cart/2" for 127.0.0.1 at 2011-06-01 02:36:50 +0530
+  Processing by Payplug::CartsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mOrder Load (0.1ms)[0m  [1mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT 1[0m  [["id", "2"]]
+  [1m[35mLineItem Load (0.2ms)[0m  SELECT "line_items".* FROM "line_items" WHERE "line_items"."order_id" = 2
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/_paypal_form.html.erb (1.8ms)
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/_google_checkout_form.html.erb (0.2ms)
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/_amazon_checkout_form.html.erb (0.2ms)
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/show.html.erb within layouts/payplug/application (12.4ms)
+Completed 200 OK in 22ms (Views: 16.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-01 02:36:50 +0530
+
+Served asset /application.css - 304 Not Modified  (0.000333s)  (pid 1110)
+
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-06-01 02:36:50 +0530
+Error compiling asset application.js:
+Sprockets::FileNotFound: couldn't find file 'jquery'
+  (in /Users/abhishekyadav/code/visoke/payplug/spec/dummy/app/assets/javascripts/application.js):7
+
+Served asset /application.js - 500 Internal Server Error
+
+
+
+Started GET "/payplug/cart/2" for 127.0.0.1 at 2011-06-01 02:58:46 +0530
+  Processing by Payplug::CartsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mOrder Load (0.2ms)[0m  [1mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT 1[0m  [["id", "2"]]
+  [1m[35mLineItem Load (0.2ms)[0m  SELECT "line_items".* FROM "line_items" WHERE "line_items"."order_id" = 2
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/_paypal_form.html.erb (2.7ms)
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/_google_checkout_form.html.erb (0.4ms)
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/_amazon_checkout_form.html.erb (0.2ms)
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/show.html.erb within layouts/payplug/application (27.3ms)
+Completed 200 OK in 38ms (Views: 31.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-01 02:58:46 +0530
+
+Served asset /application.css - 304 Not Modified  (0.00041s)  (pid 1110)
+
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-06-01 02:58:46 +0530
+Error compiling asset application.js:
+Sprockets::FileNotFound: couldn't find file 'jquery'
+  (in /Users/abhishekyadav/code/visoke/payplug/spec/dummy/app/assets/javascripts/application.js):7
+
+Served asset /application.js - 500 Internal Server Error
+
+
+
+Started GET "/payplug/cart/2" for 127.0.0.1 at 2011-06-01 03:00:32 +0530
+  Processing by Payplug::CartsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mOrder Load (0.2ms)[0m  [1mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT 1[0m  [["id", "2"]]
+  [1m[35mLineItem Load (0.3ms)[0m  SELECT "line_items".* FROM "line_items" WHERE "line_items"."order_id" = 2
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/_paypal_form.html.erb (1.7ms)
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/_google_checkout_form.html.erb (0.2ms)
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/_amazon_checkout_form.html.erb (0.2ms)
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/show.html.erb within layouts/payplug/application (11.3ms)
+Completed 200 OK in 22ms (Views: 15.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-06-01 03:00:32 +0530
+Error compiling asset application.js:
+Sprockets::FileNotFound: couldn't find file 'jquery'
+  (in /Users/abhishekyadav/code/visoke/payplug/spec/dummy/app/assets/javascripts/application.js):7
+
+Served asset /application.js - 500 Internal Server Error
+
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-01 03:00:32 +0530
+
+Served asset /application.css - 304 Not Modified  (0.000656s)  (pid 1110)
+
+
+
+Started GET "/payplug/cart/2" for 127.0.0.1 at 2011-06-01 03:02:54 +0530
+  Processing by Payplug::CartsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mOrder Load (0.2ms)[0m  [1mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT 1[0m  [["id", "2"]]
+  [1m[35mLineItem Load (0.3ms)[0m  SELECT "line_items".* FROM "line_items" WHERE "line_items"."order_id" = 2
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/_paypal_form.html.erb (2.2ms)
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/_google_checkout_form.html.erb (0.2ms)
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/_amazon_checkout_form.html.erb (0.2ms)
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/show.html.erb within layouts/payplug/application (65.9ms)
+Completed 200 OK in 77ms (Views: 71.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-06-01 03:02:54 +0530
+Error compiling asset application.js:
+Sprockets::FileNotFound: couldn't find file 'jquery'
+  (in /Users/abhishekyadav/code/visoke/payplug/spec/dummy/app/assets/javascripts/application.js):7
+
+Served asset /application.js - 500 Internal Server Error
+
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-01 03:02:54 +0530
+
+Served asset /application.css - 304 Not Modified  (0.00038s)  (pid 1110)
+
+
+
+Started GET "/payplug/cart/2" for 127.0.0.1 at 2011-06-01 03:38:12 +0530
+  Processing by Payplug::CartsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mOrder Load (0.1ms)[0m  [1mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT 1[0m  [["id", "2"]]
+  [1m[35mLineItem Load (18.2ms)[0m  SELECT "line_items".* FROM "line_items" WHERE "line_items"."order_id" = 2
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/_paypal_form.html.erb (2.1ms)
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/_google_checkout_form.html.erb (0.2ms)
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/_amazon_checkout_form.html.erb (0.2ms)
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/show.html.erb within layouts/payplug/application (29.5ms)
+Completed 200 OK in 48ms (Views: 24.6ms | ActiveRecord: 19.0ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-01 03:38:12 +0530
+
+Served asset /application.css - 304 Not Modified  (0.000336s)  (pid 1110)
+
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-06-01 03:38:12 +0530
+Error compiling asset application.js:
+Sprockets::FileNotFound: couldn't find file 'jquery'
+  (in /Users/abhishekyadav/code/visoke/payplug/spec/dummy/app/assets/javascripts/application.js):7
+
+Served asset /application.js - 500 Internal Server Error
+
+
+
+Started GET "/payplug/cart/2" for 127.0.0.1 at 2011-06-01 03:39:16 +0530
+  Processing by Payplug::CartsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mOrder Load (0.2ms)[0m  [1mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT 1[0m  [["id", "2"]]
+  [1m[35mLineItem Load (0.3ms)[0m  SELECT "line_items".* FROM "line_items" WHERE "line_items"."order_id" = 2
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/_paypal_form.html.erb (3.1ms)
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/_google_checkout_form.html.erb (0.2ms)
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/_amazon_checkout_form.html.erb (0.2ms)
+Rendered /Users/abhishekyadav/code/visoke/payplug/app/views/payplug/carts/show.html.erb within layouts/payplug/application (39.1ms)
+Completed 200 OK in 49ms (Views: 20.2ms | ActiveRecord: 23.9ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-06-01 03:39:17 +0530
+Error compiling asset application.js:
+Sprockets::FileNotFound: couldn't find file 'jquery'
+  (in /Users/abhishekyadav/code/visoke/payplug/spec/dummy/app/assets/javascripts/application.js):7
+
+Served asset /application.js - 500 Internal Server Error
+
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-01 03:39:17 +0530
+
+Served asset /application.css - 304 Not Modified  (0.000392s)  (pid 1110)
+

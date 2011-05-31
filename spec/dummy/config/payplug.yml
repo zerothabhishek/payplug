@@ -1,7 +1,8 @@
+
 development:
   paypal:
-    email:  paypal_sandbox_email
-    secret: paypal_sandbox_secret
+    email:  zeroth_1306867515_biz@gmail.com
+    secret: 12345678
   google_checkout:
     email: "google_checkout_sandbox_email"
     secret: "google_checkout_sandbox_secret"

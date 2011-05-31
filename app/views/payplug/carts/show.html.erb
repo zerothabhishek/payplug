@@ -1,8 +1,17 @@
 <h1>Shopping Cart</h1>
 
+<table>
+<tr>  <th>Item name</th> 	<th>price</th> 	<th>quantity</th>  </tr>
+
 <% @cart.items.each do |item| %>
-	<div>|- <%= item.item_name %> -|- <%= item.item_quantity %> -|- <%= item.item_price %> -|</div>	
+  <tr>
+	<td><%= item.item_name %></td> 
+	<td><%= item.item_quantity %></td> 
+	<td><%= item.item_price %></td>
+  </tr>	 
 <% end %>	
+</table>
+
 <div>
 	total: <%= @cart.total_amount %>
 </div>

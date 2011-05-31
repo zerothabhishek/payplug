@@ -1,19 +1,21 @@
 <%= form_tag(Payplug::Paypal.submit_url) do %>
 
-	<%= hidden_field_tag "invoice", 	@cart.identifier %>
-	<%#= hidden_field_tag "amount",  	@cart.total_amount %>
-	<%= hidden_field_tag "business",	Payplug::Paypal.email %>
+	<%= hidden_field_tag "business",	Payplug::Paypal.business %>
 	<%= hidden_field_tag "cmd", 		Payplug::Paypal.cmd %>
 	<%= hidden_field_tag "upload",  	Payplug::Paypal.upload %>
 	<%= hidden_field_tag "notify_url",  Payplug::Paypal.notify_url %>
 	<%= hidden_field_tag "return",  	Payplug.return_url %>
-	
+
+	<%= hidden_field_tag "invoice", 	  @cart.identifier %>
+	<%= hidden_field_tag "amount",  	  @cart.total_amount %>
+	<%= hidden_field_tag "currency_code", @cart.currency %>
+		
 	<% @cart.items.each_with_index do |item, index| %>
-		<%= hidden_field_tag "amount_#{index+1},", item.item_price %>
+		<%= hidden_field_tag "item_name_#{index+1}", 	item.item_name %>
+		<%= hidden_field_tag "amount_#{index+1}", 		item.item_price %>
+		<%= hidden_field_tag "quantity_#{index+1}", 	item.item_quantity %>
 		<%= hidden_field_tag "item_number_#{index+1},", item.identifier %>
-		<%= hidden_field_tag "item_name_#{index+1},", item.item_name %>
-		<%= hidden_field_tag "quantity_#{index+1},", item.item_quantity %>
 	<% end %>
 	
-	<%= submit_tag "pay" %>
+	<%= submit_tag "pay by paypal" %>
 <% end %>

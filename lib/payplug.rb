@@ -26,7 +26,6 @@ module Payplug
   def self.init
     yield self
     read_config
-    
     Paypal.init           #  .
     GoogleCheckout.init   #  refactor
     AmazonCheckout.init   #  .

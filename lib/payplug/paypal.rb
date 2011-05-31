@@ -1,8 +1,8 @@
 module Payplug
   class Paypal < Gateway
     
-    cattr_accessor :email
-    @@email = ""
+    cattr_accessor :business
+    @@business = ""
     
     cattr_accessor :cmd
     @@cmd = "_cart"
@@ -11,15 +11,21 @@ module Payplug
     @@upload = "1"
     
     cattr_accessor :notify_url
-    @@notify_url = nil   
+    @@notify_url = ""
+
+    cattr_accessor :return
+    @@return = ""
 
     cattr_accessor :submit_url
-    @@submit_url = ""   
+    @@submit_url = "https://www.paypal.com/cgi-bin/webscr"
+    @@sandbox_url = "https://www.sandbox.paypal.com/cgi-bin/webscr"
     
     def self.init
-      @@email = Payplug.config["paypal"]["email"]
+      @@business = Payplug.config["paypal"]["email"]
       @@secret = Payplug.config["paypal"]["secret"]
-      @@notify_url = Payplug.return_url   
+      @@notify_url = Payplug::Engine.routes.url_helpers.paypal_url(:host=>"localhost")   
+      @@return = Payplug.return_url
+      @@submit_url = @@sandbox_url unless (Rails.env=="production") 
     end
     
   end
