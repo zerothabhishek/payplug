@@ -23,7 +23,7 @@ module Payplug
     def self.init
       @@business = Payplug.config["paypal"]["email"]
       @@secret = Payplug.config["paypal"]["secret"]
-      @@notify_url = Payplug::Engine.routes.url_helpers.paypal_url(:host=>"localhost")   
+      @@notify_url = Payplug::Engine.routes.url_helpers.paypal_url(:host=>Payplug.config["callback_host"])   
       @@return = Payplug.return_url
       @@submit_url = @@sandbox_url unless (Rails.env=="production") 
     end

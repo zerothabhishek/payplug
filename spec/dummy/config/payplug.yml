@@ -1,5 +1,6 @@
 
 development:
+  callback_host: http://payplug-callback.heroku.com
   paypal:
     email:  zeroth_1306867515_biz@gmail.com
     secret: 12345678
@@ -12,6 +13,7 @@ development:
 
 
 production:
+  callback_host: ""
   paypal:
     email: "paypal_email"
     secret: "paypal_secret"

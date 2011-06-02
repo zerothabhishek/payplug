@@ -34,7 +34,6 @@ module Payplug
   def self.read_config
     config_path = "#{Rails.root}/config/payplug.yml"
     @@config = YAML.load_file(config_path)[Rails.env]
-    @@config.to_options
   end
   
   def self.find_cart(id)
