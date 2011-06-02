@@ -21,13 +21,13 @@ module Payplug
     @@sandbox_url = "https://www.sandbox.paypal.com/cgi-bin/webscr"
     
     def self.init
-      @@business = Payplug.config["paypal"]["email"]
-      @@secret = Payplug.config["paypal"]["secret"]
-      @@notify_url = Payplug::Engine.routes.url_helpers.paypal_url(:host=>Payplug.config["callback_host"])   
-      @@return = Payplug.return_url
-      @@submit_url = @@sandbox_url unless (Rails.env=="production") 
+      @@business    = Payplug.config["paypal"]["email"]
+      @@secret      = Payplug.config["paypal"]["secret"]
+      @@return      = Payplug.return_url
+      @@notify_url  = Payplug::Engine.routes.url_helpers.paypal_url(:host=>Payplug.config["callback_host"])   
+      @@submit_url  = @@sandbox_url unless (Rails.env=="production") 
     end
     
-  end
+  end  
 end
     

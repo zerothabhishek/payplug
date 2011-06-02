@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  gateway: MyString
+  params: MyText
+  received_at: 2011-06-02 13:35:04
+
+two:
+  gateway: MyString
+  params: MyText
+  received_at: 2011-06-02 13:35:04

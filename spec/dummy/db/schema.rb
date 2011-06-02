@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110530101949) do
+ActiveRecord::Schema.define(:version => 20110602080503) do
 
   create_table "line_items", :force => true do |t|
     t.integer  "price"
@@ -28,6 +28,15 @@ ActiveRecord::Schema.define(:version => 20110530101949) do
     t.string   "mode"
     t.integer  "amount"
     t.datetime "purchased_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "payplug_notifications", :force => true do |t|
+    t.text     "params"
+    t.string   "gateway"
+    t.string   "transaction_id"
+    t.boolean  "processed",      :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

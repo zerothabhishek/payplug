@@ -1,16 +1,15 @@
 
 development:
-  callback_host: http://payplug-callback.heroku.com
+  callback_host: payplug-callback.heroku.com
   paypal:
     email:  zeroth_1306867515_biz@gmail.com
     secret: 12345678
   google_checkout:
-    email: "google_checkout_sandbox_email"
-    secret: "google_checkout_sandbox_secret"
+    merchant_id: "google_checkout_merchant_id"
+    merchant_key: "google_checkout_merchant_key"
   amazon_checkout:
     email: "amazon_checkout_sandbox_email"
     secret: "amazon_checkout_sandbox_secret"
-
 
 production:
   callback_host: ""
@@ -18,8 +17,8 @@ production:
     email: "paypal_email"
     secret: "paypal_secret"
   google_checkout:
-    email: "google_checkout_email"
-    secret: "google_checkout_secret"
+    merchant_id: "google_checkout_merchant_id"
+    merchant_key: "google_checkout_merchant_key"
   amazon_checkout:
-    email: "amazon_checkout_email"
-    secret: "amazon_checkout_secret"
+    email: "amazon_checkout_sandbox_email"
+    secret: "amazon_checkout_sandbox_secret"

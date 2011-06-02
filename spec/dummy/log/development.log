@@ -2354,3 +2354,54 @@ Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-01 03:39:17 +0530
 
 Served asset /application.css - 304 Not Modified  (0.000392s)  (pid 1110)
 
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateOrders (20110530101821)
+Migrating to CreateLineItems (20110530101949)
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("line_items")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("orders")[0m
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateOrders (20110530101821)
+Migrating to CreateLineItems (20110530101949)
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("line_items")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("orders")[0m
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateOrders (20110530101821)
+Migrating to CreateLineItems (20110530101949)
+Migrating to CreatePayplugNotifications (20110602080503)
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.6ms)[0m  [1mCREATE TABLE "payplug_notifications" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "gateway" varchar(255), "params" text, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110602080503')
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("line_items")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("orders")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("payplug_notifications")
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateOrders (20110530101821)
+Migrating to CreateLineItems (20110530101949)
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("line_items")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("orders")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("payplug_notifications")
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (24.9ms)[0m  DROP TABLE "payplug_notifications"
+  [1m[36m (1.5ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20110602080503'[0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("line_items")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("orders")[0m
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateOrders (20110530101821)
+Migrating to CreateLineItems (20110530101949)
+Migrating to CreatePayplugNotifications (20110602080503)
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.6ms)[0m  [1mCREATE TABLE "payplug_notifications" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "params" text, "gateway" varchar(255), "transaction_id" varchar(255), "processed" boolean DEFAULT 'f', "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110602080503')
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("line_items")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("orders")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("payplug_notifications")

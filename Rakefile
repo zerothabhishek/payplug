@@ -5,7 +5,7 @@ rescue LoadError
   puts 'You must `gem install bundler` and `bundle install` to run rake tasks'
 end
 
-require 'rake/rdoctask'
+require 'rdoc/task'
 
 Rake::RDocTask.new(:rdoc) do |rdoc|
   rdoc.rdoc_dir = 'rdoc'
@@ -16,7 +16,15 @@ Rake::RDocTask.new(:rdoc) do |rdoc|
 end
 
 APP_RAKEFILE = File.expand_path("../spec/dummy/Rakefile", __FILE__)
-load 'rails/tasks/engine.rake'
+
+###
+#load 'rails/tasks/engine.rake'
+# The above (generated code) does not seem to work, hence added the below lines. see notes. 
+# Use :db migrations with :app prefix
+namespace :app do
+  load APP_RAKEFILE
+end
+###
 
 require 'rake/testtask'
 

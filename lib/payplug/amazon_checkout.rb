@@ -15,5 +15,6 @@ module Payplug
     def self.init
       @@email = Payplug.config["amazon_checkout"]["email"]
       @@secret = Payplug.config["amazon_checkout"]["secret"]
-    end  end
+    end  
+  end
 end
