@@ -1,9 +1,12 @@
 module Payplug
   class Notification < ActiveRecord::Base
-        
-    def process
-      # 1. validate by sending a request to paypal
-      # 2. if valid succeeds, see what is the status of the cart
+    
+    def self.has_duplicates?(n, method)    
+      duplicates(n).any? &method
+    end
+    
+    def self.duplicates(n)
+      Notification.where(:transaction_id=>n.transaction_id, :gateway => n.gateway)
     end
     
   end

@@ -1,5 +1,8 @@
 module Payplug
   class Paypal < Gateway
+
+    OtherPaymentStatuses = ["Canceled_Reversal", "Completed", "Created", "Denied", "Expired", "Failed", "Pending", "Refunded", "Reversed", "Processed", "Voided"]    
+    Completed = "Completed"
     
     cattr_accessor :business
     @@business = ""
@@ -20,6 +23,7 @@ module Payplug
     @@submit_url = "https://www.paypal.com/cgi-bin/webscr"
     @@sandbox_url = "https://www.sandbox.paypal.com/cgi-bin/webscr"
     
+      
     def self.init
       @@business    = Payplug.config["paypal"]["email"]
       @@secret      = Payplug.config["paypal"]["secret"]

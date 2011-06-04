@@ -4,7 +4,7 @@ class CreatePayplugNotifications < ActiveRecord::Migration
       t.text :params
       t.string :gateway
       t.string :transaction_id
-      t.boolean :processed, :default => false
+      t.boolean :notification_status, :default => ""
       
       t.timestamps
     end
