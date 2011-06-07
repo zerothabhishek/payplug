@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(:version => 20110602080503) do
     t.text     "params"
     t.string   "gateway"
     t.string   "transaction_id"
-    t.boolean  "notification_status"
+    t.string   "notification_status", :default => ""
     t.datetime "created_at"
     t.datetime "updated_at"
   end

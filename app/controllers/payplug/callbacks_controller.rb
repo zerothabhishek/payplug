@@ -3,7 +3,10 @@ module Payplug
     
     # POST /payplug/paypal
     def paypal
-      notification = PaypalNotification.new(:params => params, :gateway => "paypal") 
+      notification = Payplug::PaypalNotification.new(:gateway => "paypal") 
+      notification.params = params
+      
+      notification.save
       
       if !notification.actionable?
         notification.save(:as=>:not_actionable)

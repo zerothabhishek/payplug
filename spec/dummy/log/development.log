@@ -2543,3 +2543,219 @@ Migrating to CreatePayplugNotifications (20110602080503)
   [1m[35m (0.0ms)[0m  PRAGMA index_list("line_items")
   [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("orders")[0m
   [1m[35m (0.0ms)[0m  PRAGMA index_list("payplug_notifications")
+
+
+Started POST "/payplug/paypal" for 127.0.0.1 at 2011-06-06 14:53:44 +0530
+  Processing by Payplug::CallbacksController#paypal as */*
+  Parameters: {"payment_status"=>"Completed", "tax"=>"2.02", "receiver_email"=>"seller@paypalsandbox.com", "mc_shipping"=>"3.02", "business"=>"seller@paypalsandbox.com", "receiver_id"=>"TESTSELLERID1", "invoice"=>"abc1234", "item_name1"=>"something", "mc_currency"=>"USD", "mc_gross_1"=>"12.34", "notify_version"=>"2.4", "mc_handling1"=>"1.67", "txn_id"=>"3366648", "verify_sign"=>"Axgzn6SckRFG.C8-AAV3I.A7ry8sAEo8FVlpYYREAbVcZN.H75FfJNA6", "test_ipn"=>"1", "mc_shipping1"=>"1.02", "txn_type"=>"cart", "last_name"=>"Smith", "payer_id"=>"TESTBUYERID01", "mc_fee"=>"0.44", "mc_gross"=>"15.34", "mc_handling"=>"2.06", "charset"=>"windows-1252", "payer_status"=>"verified", "item_number1"=>"AK-1234", "quantity1"=>"1", "custom"=>"xyz123", "payment_date"=>"23:48:33 Jun 05, 2011 PDT", "payer_email"=>"buyer@paypalsandbox.com", "residence_country"=>"US", "payment_type"=>"instant", "first_name"=>"John"}
+Completed 500 Internal Server Error in 62ms
+
+LoadError (Expected /Users/abhishekyadav/code/visoke/payplug/lib/payplug/paypal_notification.rb to define PaypalNotification):
+  
+
+Rendered /Users/abhishekyadav/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.0.rc1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/abhishekyadav/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.0.rc1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+Rendered /Users/abhishekyadav/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.0.rc1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (17.8ms)
+
+
+Started POST "/payplug/paypal" for 127.0.0.1 at 2011-06-06 14:53:45 +0530
+  Processing by Payplug::CallbacksController#paypal as */*
+  Parameters: {"payment_status"=>"Completed", "tax"=>"2.02", "receiver_email"=>"seller@paypalsandbox.com", "mc_shipping"=>"3.02", "business"=>"seller@paypalsandbox.com", "receiver_id"=>"TESTSELLERID1", "invoice"=>"abc1234", "item_name1"=>"something", "mc_currency"=>"USD", "mc_gross_1"=>"12.34", "notify_version"=>"2.4", "mc_handling1"=>"1.67", "txn_id"=>"3366648", "verify_sign"=>"Axgzn6SckRFG.C8-AAV3I.A7ry8sAEo8FVlpYYREAbVcZN.H75FfJNA6", "test_ipn"=>"1", "mc_shipping1"=>"1.02", "txn_type"=>"cart", "last_name"=>"Smith", "payer_id"=>"TESTBUYERID01", "mc_fee"=>"0.44", "mc_gross"=>"15.34", "mc_handling"=>"2.06", "charset"=>"windows-1252", "payer_status"=>"verified", "item_number1"=>"AK-1234", "quantity1"=>"1", "custom"=>"xyz123", "payment_date"=>"23:48:33 Jun 05, 2011 PDT", "payer_email"=>"buyer@paypalsandbox.com", "residence_country"=>"US", "payment_type"=>"instant", "first_name"=>"John"}
+  [1m[36mSQL (91.2ms)[0m  [1mINSERT INTO "payplug_notifications" ("created_at", "gateway", "notification_status", "params", "transaction_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Mon, 06 Jun 2011 09:23:45 UTC +00:00], ["gateway", "paypal"], ["notification_status", nil], ["params", "--- !map:ActiveSupport::HashWithIndifferentAccess \npayment_status: Completed\ntax: \"2.02\"\nreceiver_email: seller@paypalsandbox.com\nmc_shipping: \"3.02\"\nbusiness: seller@paypalsandbox.com\nreceiver_id: TESTSELLERID1\ninvoice: abc1234\nitem_name1: something\nmc_currency: USD\nmc_gross_1: \"12.34\"\nnotify_version: \"2.4\"\nmc_handling1: \"1.67\"\ntxn_id: \"3366648\"\nverify_sign: Axgzn6SckRFG.C8-AAV3I.A7ry8sAEo8FVlpYYREAbVcZN.H75FfJNA6\ntest_ipn: \"1\"\nmc_shipping1: \"1.02\"\ntxn_type: cart\nlast_name: Smith\npayer_id: TESTBUYERID01\nmc_fee: \"0.44\"\nmc_gross: \"15.34\"\nmc_handling: \"2.06\"\ncharset: windows-1252\npayer_status: verified\nitem_number1: AK-1234\nquantity1: \"1\"\ncustom: xyz123\npayment_date: 23:48:33 Jun 05, 2011 PDT\npayer_email: buyer@paypalsandbox.com\nresidence_country: US\npayment_type: instant\nfirst_name: John\ncontroller: payplug/callbacks\naction: paypal\n"], ["transaction_id", nil], ["updated_at", Mon, 06 Jun 2011 09:23:45 UTC +00:00]]
+Rendered text template (0.0ms)
+Completed 500 Internal Server Error in 217ms
+
+NoMethodError (undefined method `genuine?' for nil:NilClass):
+  
+
+Rendered /Users/abhishekyadav/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.0.rc1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/abhishekyadav/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.0.rc1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+Rendered /Users/abhishekyadav/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.0.rc1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (4.7ms)
+
+
+Started POST "/payplug/paypal" for 127.0.0.1 at 2011-06-06 15:03:59 +0530
+  Processing by Payplug::CallbacksController#paypal as */*
+  Parameters: {"tax=2.02&payment_status=Completed&mc_shipping=3.02&receiver_email=seller@paypalsandbox.com&invoice=abc1234&receiver_id=TESTSELLERID1&business=seller@paypalsandbox.com&notify_version=2.4&mc_gross_1=12.34&mc_currency=USD&item_name1=something&verify_sign=Axgzn6SckRFG.C8-AAV3I.A7ry8sAEo8FVlpYYREAbVcZN.H75FfJNA6&txn_id=3366648&mc_handling1=1.67&txn_type=cart&mc_shipping1=1.02&test_ipn=1&charset=windows-1252&mc_handling=2.06&mc_gross=15.34&mc_fee=0.44&payer_id=TESTBUYERID01&last_name=Smith&custom=xyz123&quantity1=1&item_number1=AK-1234&payer_status=verified&residence_country=US&payer_email=buyer@paypalsandbox.com&payment_date=23:48:33%20Jun%2005,%202011%20PDT&first_name=John&payment_type=instant&"=>""}
+Completed 500 Internal Server Error in 21ms
+
+LoadError (Expected /Users/abhishekyadav/code/visoke/payplug/lib/payplug/paypal_notification.rb to define PaypalNotification):
+  
+
+Rendered /Users/abhishekyadav/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.0.rc1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/abhishekyadav/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.0.rc1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+Rendered /Users/abhishekyadav/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.0.rc1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.2ms)
+
+
+Started POST "/payplug/paypal" for 127.0.0.1 at 2011-06-06 15:04:56 +0530
+  Processing by Payplug::CallbacksController#paypal as */*
+  Parameters: {"tax=2.02&payment_status=Completed&mc_shipping=3.02&receiver_email=seller@paypalsandbox.com&invoice=abc1234&receiver_id=TESTSELLERID1&business=seller@paypalsandbox.com&notify_version=2.4&mc_gross_1=12.34&mc_currency=USD&item_name1=something&verify_sign=Axgzn6SckRFG.C8-AAV3I.A7ry8sAEo8FVlpYYREAbVcZN.H75FfJNA6&txn_id=3366648&mc_handling1=1.67&txn_type=cart&mc_shipping1=1.02&test_ipn=1&charset=windows-1252&mc_handling=2.06&mc_gross=15.34&mc_fee=0.44&payer_id=TESTBUYERID01&last_name=Smith&custom=xyz123&quantity1=1&item_number1=AK-1234&payer_status=verified&residence_country=US&payer_email=buyer@paypalsandbox.com&payment_date=23:48:33%20Jun%2005,%202011%20PDT&first_name=John&payment_type=instant&"=>""}
+  [1m[36mSQL (17.3ms)[0m  [1mINSERT INTO "payplug_notifications" ("created_at", "gateway", "notification_status", "params", "transaction_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Mon, 06 Jun 2011 09:34:56 UTC +00:00], ["gateway", "paypal"], ["notification_status", nil], ["params", "--- !map:ActiveSupport::HashWithIndifferentAccess \ntax=2.02&payment_status=Completed&mc_shipping=3.02&receiver_email=seller@paypalsandbox.com&invoice=abc1234&receiver_id=TESTSELLERID1&business=seller@paypalsandbox.com&notify_version=2.4&mc_gross_1=12.34&mc_currency=USD&item_name1=something&verify_sign=Axgzn6SckRFG.C8-AAV3I.A7ry8sAEo8FVlpYYREAbVcZN.H75FfJNA6&txn_id=3366648&mc_handling1=1.67&txn_type=cart&mc_shipping1=1.02&test_ipn=1&charset=windows-1252&mc_handling=2.06&mc_gross=15.34&mc_fee=0.44&payer_id=TESTBUYERID01&last_name=Smith&custom=xyz123&quantity1=1&item_number1=AK-1234&payer_status=verified&residence_country=US&payer_email=buyer@paypalsandbox.com&payment_date=23:48:33%20Jun%2005,%202011%20PDT&first_name=John&payment_type=instant&: \"\"\ncontroller: payplug/callbacks\naction: paypal\n"], ["transaction_id", nil], ["updated_at", Mon, 06 Jun 2011 09:34:56 UTC +00:00]]
+Rendered text template (0.0ms)
+Completed 500 Internal Server Error in 101ms
+
+NoMethodError (undefined method `genuine?' for nil:NilClass):
+  
+
+Rendered /Users/abhishekyadav/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.0.rc1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/abhishekyadav/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.0.rc1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+Rendered /Users/abhishekyadav/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.0.rc1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (4.3ms)
+
+
+Started POST "/payplug/paypal" for 127.0.0.1 at 2011-06-06 15:05:49 +0530
+  Processing by Payplug::CallbacksController#paypal as */*
+  Parameters: {"tax=2.02&payment_status=Completed&mc_shipping=3.02&receiver_email=seller@paypalsandbox.com&invoice=abc1234&receiver_id=TESTSELLERID1&business=seller@paypalsandbox.com&notify_version=2.4&mc_gross_1=12.34&mc_currency=USD&item_name1=something&verify_sign=Axgzn6SckRFG.C8-AAV3I.A7ry8sAEo8FVlpYYREAbVcZN.H75FfJNA6&txn_id=3366648&mc_handling1=1.67&txn_type=cart&mc_shipping1=1.02&test_ipn=1&charset=windows-1252&mc_handling=2.06&mc_gross=15.34&mc_fee=0.44&payer_id=TESTBUYERID01&last_name=Smith&custom=xyz123&quantity1=1&item_number1=AK-1234&payer_status=verified&residence_country=US&payer_email=buyer@paypalsandbox.com&payment_date=23:48:33%20Jun%2005,%202011%20PDT&first_name=John&payment_type=instant&"=>""}
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "payplug_notifications" ("created_at", "gateway", "notification_status", "params", "transaction_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Mon, 06 Jun 2011 09:35:49 UTC +00:00], ["gateway", "paypal"], ["notification_status", nil], ["params", "--- !map:ActiveSupport::HashWithIndifferentAccess \ntax=2.02&payment_status=Completed&mc_shipping=3.02&receiver_email=seller@paypalsandbox.com&invoice=abc1234&receiver_id=TESTSELLERID1&business=seller@paypalsandbox.com&notify_version=2.4&mc_gross_1=12.34&mc_currency=USD&item_name1=something&verify_sign=Axgzn6SckRFG.C8-AAV3I.A7ry8sAEo8FVlpYYREAbVcZN.H75FfJNA6&txn_id=3366648&mc_handling1=1.67&txn_type=cart&mc_shipping1=1.02&test_ipn=1&charset=windows-1252&mc_handling=2.06&mc_gross=15.34&mc_fee=0.44&payer_id=TESTBUYERID01&last_name=Smith&custom=xyz123&quantity1=1&item_number1=AK-1234&payer_status=verified&residence_country=US&payer_email=buyer@paypalsandbox.com&payment_date=23:48:33%20Jun%2005,%202011%20PDT&first_name=John&payment_type=instant&: \"\"\ncontroller: payplug/callbacks\naction: paypal\n"], ["transaction_id", nil], ["updated_at", Mon, 06 Jun 2011 09:35:49 UTC +00:00]]
+Rendered text template (0.0ms)
+Completed 500 Internal Server Error in 10ms
+
+NoMethodError (undefined method `genuine?' for nil:NilClass):
+  
+
+Rendered /Users/abhishekyadav/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.0.rc1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/abhishekyadav/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.0.rc1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+Rendered /Users/abhishekyadav/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.0.rc1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (4.4ms)
+
+
+Started POST "/payplug/paypal" for 127.0.0.1 at 2011-06-06 15:06:44 +0530
+  Processing by Payplug::CallbacksController#paypal as */*
+  Parameters: {"tax=2.02&payment_status=Completed&mc_shipping=3.02&receiver_email=seller@paypalsandbox.com&invoice=abc1234&receiver_id=TESTSELLERID1&business=seller@paypalsandbox.com&notify_version=2.4&mc_gross_1=12.34&mc_currency=USD&item_name1=something&verify_sign=Axgzn6SckRFG.C8-AAV3I.A7ry8sAEo8FVlpYYREAbVcZN.H75FfJNA6&txn_id=3366648&mc_handling1=1.67&txn_type=cart&mc_shipping1=1.02&test_ipn=1&charset=windows-1252&mc_handling=2.06&mc_gross=15.34&mc_fee=0.44&payer_id=TESTBUYERID01&last_name=Smith&custom=xyz123&quantity1=1&item_number1=AK-1234&payer_status=verified&residence_country=US&payer_email=buyer@paypalsandbox.com&payment_date=23:48:33%20Jun%2005,%202011%20PDT&first_name=John&payment_type=instant&"=>""}
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "payplug_notifications" ("created_at", "gateway", "notification_status", "params", "transaction_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Mon, 06 Jun 2011 09:36:44 UTC +00:00], ["gateway", "paypal"], ["notification_status", nil], ["params", "--- !map:ActiveSupport::HashWithIndifferentAccess \ntax=2.02&payment_status=Completed&mc_shipping=3.02&receiver_email=seller@paypalsandbox.com&invoice=abc1234&receiver_id=TESTSELLERID1&business=seller@paypalsandbox.com&notify_version=2.4&mc_gross_1=12.34&mc_currency=USD&item_name1=something&verify_sign=Axgzn6SckRFG.C8-AAV3I.A7ry8sAEo8FVlpYYREAbVcZN.H75FfJNA6&txn_id=3366648&mc_handling1=1.67&txn_type=cart&mc_shipping1=1.02&test_ipn=1&charset=windows-1252&mc_handling=2.06&mc_gross=15.34&mc_fee=0.44&payer_id=TESTBUYERID01&last_name=Smith&custom=xyz123&quantity1=1&item_number1=AK-1234&payer_status=verified&residence_country=US&payer_email=buyer@paypalsandbox.com&payment_date=23:48:33%20Jun%2005,%202011%20PDT&first_name=John&payment_type=instant&: \"\"\ncontroller: payplug/callbacks\naction: paypal\n"], ["transaction_id", nil], ["updated_at", Mon, 06 Jun 2011 09:36:44 UTC +00:00]]
+Rendered text template (0.0ms)
+Completed 500 Internal Server Error in 44ms
+
+NoMethodError (undefined method `genuine?' for nil:NilClass):
+  
+
+Rendered /Users/abhishekyadav/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.0.rc1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/abhishekyadav/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.0.rc1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+Rendered /Users/abhishekyadav/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.0.rc1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (4.4ms)
+
+
+Started POST "/payplug/paypal" for 127.0.0.1 at 2011-06-06 17:09:11 +0530
+  Processing by Payplug::CallbacksController#paypal as */*
+  Parameters: {"tax=2.02&payment_status=Completed&mc_shipping=3.02&receiver_email=seller@paypalsandbox.com&invoice=abc1234&receiver_id=TESTSELLERID1&business=seller@paypalsandbox.com&notify_version=2.4&mc_gross_1=12.34&mc_currency=USD&item_name1=something&verify_sign=Axgzn6SckRFG.C8-AAV3I.A7ry8sAEo8FVlpYYREAbVcZN.H75FfJNA6&txn_id=3366648&mc_handling1=1.67&txn_type=cart&mc_shipping1=1.02&test_ipn=1&charset=windows-1252&mc_handling=2.06&mc_gross=15.34&mc_fee=0.44&payer_id=TESTBUYERID01&last_name=Smith&custom=xyz123&quantity1=1&item_number1=AK-1234&payer_status=verified&residence_country=US&payer_email=buyer@paypalsandbox.com&payment_date=23:48:33%20Jun%2005,%202011%20PDT&first_name=John&payment_type=instant&"=>""}
+  [1m[35mSQL (32.6ms)[0m  INSERT INTO "payplug_notifications" ("created_at", "gateway", "notification_status", "params", "transaction_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Mon, 06 Jun 2011 11:39:13 UTC +00:00], ["gateway", "paypal"], ["notification_status", nil], ["params", "--- !map:ActiveSupport::HashWithIndifferentAccess \ntax=2.02&payment_status=Completed&mc_shipping=3.02&receiver_email=seller@paypalsandbox.com&invoice=abc1234&receiver_id=TESTSELLERID1&business=seller@paypalsandbox.com&notify_version=2.4&mc_gross_1=12.34&mc_currency=USD&item_name1=something&verify_sign=Axgzn6SckRFG.C8-AAV3I.A7ry8sAEo8FVlpYYREAbVcZN.H75FfJNA6&txn_id=3366648&mc_handling1=1.67&txn_type=cart&mc_shipping1=1.02&test_ipn=1&charset=windows-1252&mc_handling=2.06&mc_gross=15.34&mc_fee=0.44&payer_id=TESTBUYERID01&last_name=Smith&custom=xyz123&quantity1=1&item_number1=AK-1234&payer_status=verified&residence_country=US&payer_email=buyer@paypalsandbox.com&payment_date=23:48:33%20Jun%2005,%202011%20PDT&first_name=John&payment_type=instant&: \"\"\ncontroller: payplug/callbacks\naction: paypal\n"], ["transaction_id", nil], ["updated_at", Mon, 06 Jun 2011 11:39:13 UTC +00:00]]
+Rendered text template (0.0ms)
+Completed 500 Internal Server Error in 317ms
+
+NoMethodError (undefined method `genuine?' for nil:NilClass):
+  
+
+Rendered /Users/abhishekyadav/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.0.rc1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.5ms)
+Rendered /Users/abhishekyadav/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.0.rc1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.2ms)
+Rendered /Users/abhishekyadav/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.0.rc1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (42.1ms)
+
+
+Started POST "/payplug/paypal" for 127.0.0.1 at 2011-06-06 17:20:27 +0530
+  Processing by Payplug::CallbacksController#paypal as */*
+  Parameters: {"tax"=>"2.02", "payment_status"=>"Completed", "mc_shipping"=>"3.02", "receiver_email"=>"seller@paypalsandbox.com", "invoice"=>"abc1234", "receiver_id"=>"TESTSELLERID1", "business"=>"seller@paypalsandbox.com", "notify_version"=>"2.4", "mc_gross_1"=>"12.34", "mc_currency"=>"USD", "item_name1"=>"something", "verify_sign"=>"ApNWl5W.z4oKhyD2fb3SEaf-3CQjAE-utGQ3rkVHmnkqo3zNHndYeCFd", "txn_id"=>"3366648", "mc_handling1"=>"1.67", "txn_type"=>"cart", "mc_shipping1"=>"1.02", "test_ipn"=>"1", "charset"=>"windows-1252", "mc_handling"=>"2.06", "mc_gross"=>"15.34", "mc_fee"=>"0.44", "payer_id"=>"TESTBUYERID01", "last_name"=>"Smith", "custom"=>"xyz123", "quantity1"=>"1", "item_number1"=>"AK-1234", "payer_status"=>"verified", "residence_country"=>"US", "payer_email"=>"buyer@paypalsandbox.com", "payment_date"=>"23:48:33 Jun 05, 2011 PDT", "first_name"=>"Abhishek", "payment_type"=>"instant"}
+Completed 500 Internal Server Error in 62ms
+
+LoadError (Expected /Users/abhishekyadav/code/visoke/payplug/lib/payplug/paypal_notification.rb to define PaypalNotification):
+  
+
+Rendered /Users/abhishekyadav/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.0.rc1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/abhishekyadav/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.0.rc1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+Rendered /Users/abhishekyadav/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.0.rc1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.3ms)
+
+
+Started POST "/payplug/paypal" for 127.0.0.1 at 2011-06-06 17:21:56 +0530
+  Processing by Payplug::CallbacksController#paypal as */*
+  Parameters: {"tax"=>"2.02", "payment_status"=>"Completed", "mc_shipping"=>"3.02", "receiver_email"=>"seller@paypalsandbox.com", "invoice"=>"abc1234", "receiver_id"=>"TESTSELLERID1", "business"=>"seller@paypalsandbox.com", "notify_version"=>"2.4", "mc_gross_1"=>"12.34", "mc_currency"=>"USD", "item_name1"=>"something", "verify_sign"=>"ApNWl5W.z4oKhyD2fb3SEaf-3CQjAE-utGQ3rkVHmnkqo3zNHndYeCFd", "txn_id"=>"3366648", "mc_handling1"=>"1.67", "txn_type"=>"cart", "mc_shipping1"=>"1.02", "test_ipn"=>"1", "charset"=>"windows-1252", "mc_handling"=>"2.06", "mc_gross"=>"15.34", "mc_fee"=>"0.44", "payer_id"=>"TESTBUYERID01", "last_name"=>"Smith", "custom"=>"xyz123", "quantity1"=>"1", "item_number1"=>"AK-1234", "payer_status"=>"verified", "residence_country"=>"US", "payer_email"=>"buyer@paypalsandbox.com", "payment_date"=>"23:48:33 Jun 05, 2011 PDT", "first_name"=>"Abhishek", "payment_type"=>"instant"}
+  [1m[36mSQL (67.2ms)[0m  [1mINSERT INTO "payplug_notifications" ("created_at", "gateway", "notification_status", "params", "transaction_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Mon, 06 Jun 2011 11:51:56 UTC +00:00], ["gateway", "paypal"], ["notification_status", nil], ["params", "--- !map:ActiveSupport::HashWithIndifferentAccess \ntax: \"2.02\"\npayment_status: Completed\nmc_shipping: \"3.02\"\nreceiver_email: seller@paypalsandbox.com\ninvoice: abc1234\nreceiver_id: TESTSELLERID1\nbusiness: seller@paypalsandbox.com\nnotify_version: \"2.4\"\nmc_gross_1: \"12.34\"\nmc_currency: USD\nitem_name1: something\nverify_sign: ApNWl5W.z4oKhyD2fb3SEaf-3CQjAE-utGQ3rkVHmnkqo3zNHndYeCFd\ntxn_id: \"3366648\"\nmc_handling1: \"1.67\"\ntxn_type: cart\nmc_shipping1: \"1.02\"\ntest_ipn: \"1\"\ncharset: windows-1252\nmc_handling: \"2.06\"\nmc_gross: \"15.34\"\nmc_fee: \"0.44\"\npayer_id: TESTBUYERID01\nlast_name: Smith\ncustom: xyz123\nquantity1: \"1\"\nitem_number1: AK-1234\npayer_status: verified\nresidence_country: US\npayer_email: buyer@paypalsandbox.com\npayment_date: 23:48:33 Jun 05, 2011 PDT\nfirst_name: Abhishek\npayment_type: instant\ncontroller: payplug/callbacks\naction: paypal\n"], ["transaction_id", nil], ["updated_at", Mon, 06 Jun 2011 11:51:56 UTC +00:00]]
+Rendered text template (0.0ms)
+Completed 500 Internal Server Error in 160ms
+
+NoMethodError (undefined method `genuine?' for nil:NilClass):
+  
+
+Rendered /Users/abhishekyadav/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.0.rc1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /Users/abhishekyadav/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.0.rc1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+Rendered /Users/abhishekyadav/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.0.rc1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (4.6ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (40.0ms)[0m  DROP TABLE "payplug_notifications"
+  [1m[36m (1.5ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20110602080503'[0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("line_items")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("orders")[0m
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateOrders (20110530101821)
+Migrating to CreateLineItems (20110530101949)
+Migrating to CreatePayplugNotifications (20110602080503)
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.9ms)[0m  [1mCREATE TABLE "payplug_notifications" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "params" text, "gateway" varchar(255), "transaction_id" varchar(255), "notification_status" varchar(255) DEFAULT '', "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110602080503')
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("line_items")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("orders")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("payplug_notifications")
+
+
+Started POST "/payplug/paypal" for 127.0.0.1 at 2011-06-06 17:35:32 +0530
+  Processing by Payplug::CallbacksController#paypal as */*
+  Parameters: {"tax"=>"2.02", "payment_status"=>"Completed", "mc_shipping"=>"3.02", "receiver_email"=>"seller@paypalsandbox.com", "invoice"=>"abc1234", "receiver_id"=>"TESTSELLERID1", "business"=>"seller@paypalsandbox.com", "notify_version"=>"2.4", "mc_gross_1"=>"12.34", "mc_currency"=>"USD", "item_name1"=>"something", "verify_sign"=>"Axgzn6SckRFG.C8-AAV3I.A7ry8sAEo8FVlpYYREAbVcZN.H75FfJNA6", "txn_id"=>"3366648", "mc_handling1"=>"1.67", "txn_type"=>"cart", "mc_shipping1"=>"1.02", "test_ipn"=>"1", "charset"=>"windows-1252", "mc_handling"=>"2.06", "mc_gross"=>"15.34", "mc_fee"=>"0.44", "payer_id"=>"TESTBUYERID01", "last_name"=>"Smith", "custom"=>"xyz123", "quantity1"=>"1", "item_number1"=>"AK-1234", "payer_status"=>"verified", "residence_country"=>"US", "payer_email"=>"buyer@paypalsandbox.com", "payment_date"=>"23:48:33 Jun 05, 2011 PDT", "first_name"=>"John", "payment_type"=>"instant"}
+Completed 500 Internal Server Error in 19ms
+
+LoadError (Expected /Users/abhishekyadav/code/visoke/payplug/lib/payplug/paypal_notification.rb to define PaypalNotification):
+  
+
+Rendered /Users/abhishekyadav/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.0.rc1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/abhishekyadav/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.0.rc1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+Rendered /Users/abhishekyadav/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.0.rc1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.3ms)
+
+
+Started POST "/payplug/paypal" for 127.0.0.1 at 2011-06-06 18:00:38 +0530
+  Processing by Payplug::CallbacksController#paypal as */*
+  Parameters: {"env"=>"heroku", "from"=>"paypal", "q"=>"me"}
+  [1m[36mSQL (60.3ms)[0m  [1mINSERT INTO "payplug_notifications" ("created_at", "gateway", "notification_status", "params", "transaction_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Mon, 06 Jun 2011 12:30:38 UTC +00:00], ["gateway", "paypal"], ["notification_status", ""], ["params", "--- !map:ActiveSupport::HashWithIndifferentAccess \nenv: heroku\nfrom: paypal\nq: me\ncontroller: payplug/callbacks\naction: paypal\n"], ["transaction_id", nil], ["updated_at", Mon, 06 Jun 2011 12:30:38 UTC +00:00]]
+Rendered text template (0.0ms)
+Completed 500 Internal Server Error in 361ms
+
+NoMethodError (undefined method `genuine?' for nil:NilClass):
+  
+
+Rendered /Users/abhishekyadav/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.0.rc1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/abhishekyadav/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.0.rc1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+Rendered /Users/abhishekyadav/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.0.rc1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (17.8ms)
+
+
+Started POST "/payplug/paypal" for 127.0.0.1 at 2011-06-06 18:00:52 +0530
+  Processing by Payplug::CallbacksController#paypal as */*
+  Parameters: {"tax"=>"2.02", "payment_status"=>"Completed", "mc_shipping"=>"3.02", "receiver_email"=>"seller@paypalsandbox.com", "invoice"=>"abc1234", "receiver_id"=>"TESTSELLERID1", "business"=>"seller@paypalsandbox.com", "notify_version"=>"2.4", "mc_gross_1"=>"12.34", "mc_currency"=>"USD", "item_name1"=>"something", "verify_sign"=>"Axgzn6SckRFG.C8-AAV3I.A7ry8sAEo8FVlpYYREAbVcZN.H75FfJNA6", "txn_id"=>"3366648", "mc_handling1"=>"1.67", "txn_type"=>"cart", "mc_shipping1"=>"1.02", "test_ipn"=>"1", "charset"=>"windows-1252", "mc_handling"=>"2.06", "mc_gross"=>"15.34", "mc_fee"=>"0.44", "payer_id"=>"TESTBUYERID01", "last_name"=>"Smith", "custom"=>"xyz123", "quantity1"=>"1", "item_number1"=>"AK-1234", "payer_status"=>"verified", "residence_country"=>"US", "payer_email"=>"buyer@paypalsandbox.com", "payment_date"=>"23:48:33 Jun 05, 2011 PDT", "first_name"=>"John", "payment_type"=>"instant"}
+Completed 500 Internal Server Error in 17ms
+
+NameError (uninitialized constant Payplug::PaypalNotification::Net):
+  
+
+Rendered /Users/abhishekyadav/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.0.rc1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/abhishekyadav/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.0.rc1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+Rendered /Users/abhishekyadav/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.0.rc1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (4.5ms)
+
+
+Started POST "/payplug/paypal" for 127.0.0.1 at 2011-06-06 18:01:24 +0530
+  Processing by Payplug::CallbacksController#paypal as */*
+  Parameters: {"tax"=>"2.02", "payment_status"=>"Completed", "mc_shipping"=>"3.02", "receiver_email"=>"seller@paypalsandbox.com", "invoice"=>"abc1234", "receiver_id"=>"TESTSELLERID1", "business"=>"seller@paypalsandbox.com", "notify_version"=>"2.4", "mc_gross_1"=>"12.34", "mc_currency"=>"USD", "item_name1"=>"something", "verify_sign"=>"Axgzn6SckRFG.C8-AAV3I.A7ry8sAEo8FVlpYYREAbVcZN.H75FfJNA6", "txn_id"=>"3366648", "mc_handling1"=>"1.67", "txn_type"=>"cart", "mc_shipping1"=>"1.02", "test_ipn"=>"1", "charset"=>"windows-1252", "mc_handling"=>"2.06", "mc_gross"=>"15.34", "mc_fee"=>"0.44", "payer_id"=>"TESTBUYERID01", "last_name"=>"Smith", "custom"=>"xyz123", "quantity1"=>"1", "item_number1"=>"AK-1234", "payer_status"=>"verified", "residence_country"=>"US", "payer_email"=>"buyer@paypalsandbox.com", "payment_date"=>"23:48:33 Jun 05, 2011 PDT", "first_name"=>"John", "payment_type"=>"instant"}
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "payplug_notifications" ("created_at", "gateway", "notification_status", "params", "transaction_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Mon, 06 Jun 2011 12:31:24 UTC +00:00], ["gateway", "paypal"], ["notification_status", ""], ["params", "--- !map:ActiveSupport::HashWithIndifferentAccess \ntax: \"2.02\"\npayment_status: Completed\nmc_shipping: \"3.02\"\nreceiver_email: seller@paypalsandbox.com\ninvoice: abc1234\nreceiver_id: TESTSELLERID1\nbusiness: seller@paypalsandbox.com\nnotify_version: \"2.4\"\nmc_gross_1: \"12.34\"\nmc_currency: USD\nitem_name1: something\nverify_sign: Axgzn6SckRFG.C8-AAV3I.A7ry8sAEo8FVlpYYREAbVcZN.H75FfJNA6\ntxn_id: \"3366648\"\nmc_handling1: \"1.67\"\ntxn_type: cart\nmc_shipping1: \"1.02\"\ntest_ipn: \"1\"\ncharset: windows-1252\nmc_handling: \"2.06\"\nmc_gross: \"15.34\"\nmc_fee: \"0.44\"\npayer_id: TESTBUYERID01\nlast_name: Smith\ncustom: xyz123\nquantity1: \"1\"\nitem_number1: AK-1234\npayer_status: verified\nresidence_country: US\npayer_email: buyer@paypalsandbox.com\npayment_date: 23:48:33 Jun 05, 2011 PDT\nfirst_name: John\npayment_type: instant\ncontroller: payplug/callbacks\naction: paypal\n"], ["transaction_id", nil], ["updated_at", Mon, 06 Jun 2011 12:31:24 UTC +00:00]]
+Completed 500 Internal Server Error in 23ms
+
+NameError (uninitialized constant Payplug::PaypalNotification::Net):
+  
+
+Rendered /Users/abhishekyadav/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.0.rc1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/abhishekyadav/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.0.rc1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+Rendered /Users/abhishekyadav/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.0.rc1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (4.4ms)
+
+
+Started POST "/payplug/paypal" for 127.0.0.1 at 2011-06-06 18:02:36 +0530
+  Processing by Payplug::CallbacksController#paypal as */*
+  Parameters: {"tax"=>"2.02", "payment_status"=>"Completed", "mc_shipping"=>"3.02", "receiver_email"=>"seller@paypalsandbox.com", "invoice"=>"abc1234", "receiver_id"=>"TESTSELLERID1", "business"=>"seller@paypalsandbox.com", "notify_version"=>"2.4", "mc_gross_1"=>"12.34", "mc_currency"=>"USD", "item_name1"=>"something", "verify_sign"=>"ApNWl5W.z4oKhyD2fb3SEaf-3CQjAE-utGQ3rkVHmnkqo3zNHndYeCFd", "txn_id"=>"3366648", "mc_handling1"=>"1.67", "txn_type"=>"cart", "mc_shipping1"=>"1.02", "test_ipn"=>"1", "charset"=>"windows-1252", "mc_handling"=>"2.06", "mc_gross"=>"15.34", "mc_fee"=>"0.44", "payer_id"=>"TESTBUYERID01", "last_name"=>"Smith", "custom"=>"xyz123", "quantity1"=>"1", "item_number1"=>"AK-1234", "payer_status"=>"verified", "residence_country"=>"US", "payer_email"=>"buyer@paypalsandbox.com", "payment_date"=>"23:48:33 Jun 05, 2011 PDT", "first_name"=>"Abhishek", "payment_type"=>"instant"}
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "payplug_notifications" ("created_at", "gateway", "notification_status", "params", "transaction_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Mon, 06 Jun 2011 12:32:36 UTC +00:00], ["gateway", "paypal"], ["notification_status", ""], ["params", "--- !map:ActiveSupport::HashWithIndifferentAccess \ntax: \"2.02\"\npayment_status: Completed\nmc_shipping: \"3.02\"\nreceiver_email: seller@paypalsandbox.com\ninvoice: abc1234\nreceiver_id: TESTSELLERID1\nbusiness: seller@paypalsandbox.com\nnotify_version: \"2.4\"\nmc_gross_1: \"12.34\"\nmc_currency: USD\nitem_name1: something\nverify_sign: ApNWl5W.z4oKhyD2fb3SEaf-3CQjAE-utGQ3rkVHmnkqo3zNHndYeCFd\ntxn_id: \"3366648\"\nmc_handling1: \"1.67\"\ntxn_type: cart\nmc_shipping1: \"1.02\"\ntest_ipn: \"1\"\ncharset: windows-1252\nmc_handling: \"2.06\"\nmc_gross: \"15.34\"\nmc_fee: \"0.44\"\npayer_id: TESTBUYERID01\nlast_name: Smith\ncustom: xyz123\nquantity1: \"1\"\nitem_number1: AK-1234\npayer_status: verified\nresidence_country: US\npayer_email: buyer@paypalsandbox.com\npayment_date: 23:48:33 Jun 05, 2011 PDT\nfirst_name: Abhishek\npayment_type: instant\ncontroller: payplug/callbacks\naction: paypal\n"], ["transaction_id", nil], ["updated_at", Mon, 06 Jun 2011 12:32:36 UTC +00:00]]
+Completed 500 Internal Server Error in 24ms
+
+NameError (uninitialized constant Payplug::PaypalNotification::Net):
+  
+
+Rendered /Users/abhishekyadav/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.0.rc1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/abhishekyadav/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.0.rc1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+Rendered /Users/abhishekyadav/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.0.rc1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (4.8ms)

@@ -1,3 +1,6 @@
+require 'net/http'
+require 'uri'
+
 require "payplug/engine"
 require "payplug/cart"
 require "payplug/item"
@@ -5,9 +8,10 @@ require "payplug/gateway"
 require "payplug/paypal"
 require "payplug/google_checkout"
 require "payplug/amazon_checkout"
+require "payplug/paypal_notification"
 
 module Payplug
-  
+
   mattr_accessor :cart_klass
   @@cart_klass = nil
   

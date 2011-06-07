@@ -1,12 +1,15 @@
 module Payplug
- class PaypalNotification < Payplug::Notification
+ 
+ autoload :Notification, File.expand_path("../../../app/models/payplug/notification.rb", __FILE__)
+    
+ class PaypalNotification < Notification
   serialize :params
 
   ####### actionable ###########  
   def actionable?
     has_cart? && 
     has_payment_status? && 
-    isnt_test?
+    !is_test?
   end
   
   def has_cart?
@@ -17,8 +20,8 @@ module Payplug
     payment_status != ""
   end
   
-  def isnt_test?
-    params["test_ipn"] ==""
+  def is_test?
+    Rails.env=="production" && params["test_ipn"] !=""
   end
   
   def get_actionable_notification
@@ -34,7 +37,7 @@ module Payplug
 
   def validated_from_paypal    
     parameters = params.merge({"cmd"=>"_notify-validate"})
-    response = Net::HTTP.post_form(URI.parse('http://www.example.com/search.cgi'), parameters)    
+    response = Net::HTTP.post_form(URI.parse('https://www.paypal.com/cgi-bin/webscr'), parameters)    
     case response
       when 'VERIFIED' ; return true      
       when 'INVALID'  ; return false
