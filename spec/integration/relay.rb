@@ -1,4 +1,3 @@
-#!/usr/bin/ruby
 require 'net/http'
 require 'uri'
 require 'yaml'
@@ -15,7 +14,7 @@ params_hash = YAML::load(params_yaml)
 url = "http://localhost:3000/payplug/#{gateway}"
 
 p "Posting ======>"
-p "#{params_hash} "
+p "#{params_hash}. "
 p "for the notification #{gateway}:#{notification_id}"
 p "to #{url}"
 
