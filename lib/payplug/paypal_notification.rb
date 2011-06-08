@@ -37,8 +37,11 @@ module Payplug
 
   def validated_from_paypal    
     parameters = params.merge({"cmd"=>"_notify-validate"})
-    response = Net::HTTP.post_form(URI.parse('https://www.paypal.com/cgi-bin/webscr'), parameters)    
-    case response
+    http = Net::HTTP.new(Paypal.verification_host, 443)
+    http.use_ssl = true
+    path = "#{Paypal.verification_path}#{parameters.to_query}"
+    response, response_data = http.get(path)
+    case response_data
       when 'VERIFIED' ; return true      
       when 'INVALID'  ; return false
       else            ; raise "Can't validate this notification - #{id}"  
@@ -94,7 +97,7 @@ module Payplug
   end
   
   def save(as_hash={})
-    notification_status = as_hash[:as]
+    self.notification_status = as_hash[:as]
     super
   end
   

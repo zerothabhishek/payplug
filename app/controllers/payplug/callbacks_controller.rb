@@ -4,9 +4,8 @@ module Payplug
     # POST /payplug/paypal
     def paypal
       notification = Payplug::PaypalNotification.new(:gateway => "paypal") 
-      notification.params = params
-      
-      notification.save
+      notification.params = request.env["rack.request.form_hash"]
+      notification.save(:as=>:unprocessed)
       
       if !notification.actionable?
         notification.save(:as=>:not_actionable)
