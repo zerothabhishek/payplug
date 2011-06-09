@@ -7,5 +7,9 @@ class LineItem < ActiveRecord::Base
       :item_price => :price,
       :item_quantity => :qty  }
   end
+  
+  def desc
+    "description for the item"
+  end
 
 end

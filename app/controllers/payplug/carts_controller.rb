@@ -5,6 +5,9 @@ module Payplug
     def show
       @cart = Payplug.find_cart(params[:id])
     end
-  
+    
+    def thanks
+      render :text => "thanks"
+    end  
   end
 end

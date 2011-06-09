@@ -1,3 +1,15 @@
 <%= form_tag(Payplug::GoogleCheckout.submit_url) do %>
-	<%# All google checkout params added as hidden_field_tag's %>
+
+	<%= hidden_field_tag "checkout-flow-support.merchant-checkout-flow-support.continue-shopping-url", Payplug.return_url %>
+		
+	<% @cart.items.each_with_index do |item, index| %>
+		<%= hidden_field_tag "shopping-cart.items.item-#{index+1}.item-name", item.item_name %>
+		<%= hidden_field_tag "shopping-cart.items.item-#{index+1}.item-description", item.item_description %>
+		<%= hidden_field_tag "shopping-cart.items.item-#{index+1}.unit-price", 		item.item_price %>
+		<%= hidden_field_tag "shopping-cart.items.item-#{index+1}.unit-price.currency", @cart.currency %>
+		<%= hidden_field_tag "shopping-cart.items.item-#{index+1}.quantity", 	item.item_quantity %>
+		<%= hidden_field_tag "shopping-cart.items.item-#{index+1}.merchant-item-id", item.identifier %>
+	<% end %>
+	
+	<%= image_submit_tag Payplug::GoogleCheckout.button_url %>
 <% end %>

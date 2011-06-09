@@ -29,9 +29,13 @@ module Payplug
     
     # POST /payplug/google
     def google
-      notification = Notification.create(:gateway => "google_checkout", :params => params)
+      notification = Payplug::GoogleCheckoutNotification.new(:gateway => "google_checkout")
+      notification.params = request.env["rack.request.form_hash"]
+      notification.save(:as=>:unprocessed)
+      
+      notification.pre_process!
       notification.process
-      render :nothing => true
+      render_acknowledgement      
     end
     
     # POST /payplug/amazon
@@ -52,6 +56,11 @@ module Payplug
       render :nothing => true
       return
     end
+
+    def render_acknowledgement
+      render :status=>200, :content_type=>'text/xml', :text=>"<notification-acknowledgment xmlns=\"http://checkout.google.com/schema/2\"  serial-number=\"123\" />"
+    end
+    
     
   end
 end

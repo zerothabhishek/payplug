@@ -5,8 +5,8 @@ development:
     email:  zeroth_1306867515_biz@gmail.com
     secret: 12345678
   google_checkout:
-    merchant_id: "google_checkout_merchant_id"
-    merchant_key: "google_checkout_merchant_key"
+    merchant_id: 855388382849662
+    merchant_key: KOYLh_TjY8kUwAKYrsNkjQ
   amazon_checkout:
     email: "amazon_checkout_sandbox_email"
     secret: "amazon_checkout_sandbox_secret"

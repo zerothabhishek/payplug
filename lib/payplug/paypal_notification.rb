@@ -3,7 +3,6 @@ module Payplug
  autoload :Notification, File.expand_path("../../../app/models/payplug/notification.rb", __FILE__)
     
  class PaypalNotification < Notification
-  serialize :params
 
   ####### actionable ###########  
   def actionable?
@@ -83,24 +82,7 @@ module Payplug
   end
   
 
-  ####### process ###########  
-  def process
-    if payment_complete?
-  	  save(:as=>:success)
-  	  cart.handle_success
-  	  save(:as=>:processed)
-    elsif some_other_status?
-  	  save(:as=>:not_success)
-  	  cart.handle_other_notification
-  	  save(:as=>:processed)
-    end    
-  end
-  
-  def save(as_hash={})
-    self.notification_status = as_hash[:as]
-    super
-  end
-  
+  ####### process ###########      
   def payment_complete?
     payment_status == Paypal::Completed
   end
