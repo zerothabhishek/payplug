@@ -1,7 +1,8 @@
 <%= form_tag(Payplug::GoogleCheckout.submit_url) do %>
 
 	<%= hidden_field_tag "checkout-flow-support.merchant-checkout-flow-support.continue-shopping-url", Payplug.return_url %>
-		
+	<%= hidden_field_tag "shopping-cart.merchant-private-data", @cart.id %>	
+
 	<% @cart.items.each_with_index do |item, index| %>
 		<%= hidden_field_tag "shopping-cart.items.item-#{index+1}.item-name", item.item_name %>
 		<%= hidden_field_tag "shopping-cart.items.item-#{index+1}.item-description", item.item_description %>

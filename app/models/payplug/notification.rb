@@ -10,16 +10,25 @@ module Payplug
       Notification.where(:transaction_id=>n.transaction_id, :gateway => n.gateway)
     end
     
-    def save(as_hash={})
-      self.notification_status = as_hash[:as]
-      self.transaction_id = as_hash[:txn]
+    def save(save_hash={})
+      self.status = save_hash[:as]
+      self.transaction_id = save_hash[:txn]
+      self.type = save_hash[:type]
       super
+    end
+        
+    def cart(id)
+      begin
+        @cart ||= Payplug.find_cart(id)
+      rescue
+        raise CartNotFoundException 
+      end  
     end
     
     def process
       if payment_complete?
     	  save(:as=>:success)
-    	  cart.handle_success
+    	  cart.success
     	  save(:as=>:processed)
       elsif some_other_status?
     	  save(:as=>:not_success)

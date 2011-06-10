@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110602080503) do
+ActiveRecord::Schema.define(:version => 20110610054135) do
 
   create_table "line_items", :force => true do |t|
     t.integer  "price"
@@ -36,9 +36,10 @@ ActiveRecord::Schema.define(:version => 20110602080503) do
     t.text     "params"
     t.string   "gateway"
     t.string   "transaction_id"
-    t.string   "notification_status", :default => ""
+    t.string   "status",         :default => ""
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "type"
   end
 
 end

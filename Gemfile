@@ -7,6 +7,7 @@ gem 'rails', '3.1.0.rc1'
 
 gem 'sqlite3'
 gem 'ruby-debug19'
+gem 'rest-client', '1.6.3'
 
 if RUBY_VERSION < '1.9'
   gem "ruby-debug", ">= 0.10.3"
