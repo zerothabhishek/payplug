@@ -1,3 +1,6 @@
+require File.expand_path("../paypal_params", __FILE__)
+require File.expand_path("../paypal_notification", __FILE__)
+
 module Payplug
   class Paypal < Gateway
 

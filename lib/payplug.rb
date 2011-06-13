@@ -10,8 +10,6 @@ require "payplug/gateway"
 require "payplug/paypal"
 require "payplug/google_checkout"
 require "payplug/amazon_checkout"
-require "payplug/paypal_notification"
-
 
 module Payplug
 

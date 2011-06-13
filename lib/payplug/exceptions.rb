@@ -36,4 +36,11 @@ module Payplug
   class ChargeAndShipOrderCommandException < GoogleCheckoutNotificationException
   end
   
+  class PaypalException < PayplugException
+  end
+  
+  class NotificationVerificationError < PaypalException
+  end
+  
+  
 end
