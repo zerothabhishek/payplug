@@ -5,21 +5,21 @@ module Payplug
     def paypal
       notification = Payplug::PaypalNotification.new(:gateway => "paypal") 
       notification.params = request.env["rack.request.form_hash"]
-      notification.save(:as=>:unprocessed)
+      notification.save_as(:unprocessed)
       
       if !notification.actionable?
-        notification.save(:as=>:not_actionable)
+        notification.save_as(:not_actionable)
         notification = notification.get_actionable_notification
         log_and_exit if notification.nil? 
       end
       
       if !notification.genuine?
-        notification.save(:as=>:not_genuine)
+        notification.save_as(:not_genuine)
         raise_alarm_and_exit 
       end
       
       if notification.resend?
-        notification.save(:as=>:resend)
+        notification.save_as(:resend)
         log_and_exit
       end
       
@@ -34,10 +34,9 @@ module Payplug
         notification = Payplug::GoogleCheckoutNotification.preprocess(parameters)
         notification.process
         render notification.acknowledgement
-      rescue => e
-        p e.message
-        e.backtrace.each{|line| p line }
-        render :status => 500, :text => "Error"
+      rescue PayplugException => e
+        e.handle
+        render notification.error_response
       end
     end
     

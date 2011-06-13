@@ -23,7 +23,8 @@ module Payplug
     end
     
     def order_amount_matches?
-      authorization_amount == cart.amount
+      # This should allow Floats compared with FixNum
+      authorization_amount.to_f == cart.total_amount
     end    
 
     def order_currency_matches?

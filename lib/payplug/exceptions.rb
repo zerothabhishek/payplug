@@ -1,15 +1,18 @@
 module Payplug
   
-  class NotificationException < Exception
-    def handle 
+  class PayplugException < Exception
+    def handle
       Rails.logger.error self.message + self.backtrace
     end
   end
   
-  class CartNotFoundException < Exception
+  class NotificationException < PayplugException
   end
   
-  class DuplicateCartProcessingReqestException < Exception
+  class CartNotFoundException < PayplugException
+  end
+  
+  class DuplicateCartProcessingReqestException < PayplugException
   end
   
   class UnhandleableNotificationException < NotificationException

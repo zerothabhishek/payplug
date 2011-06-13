@@ -15,7 +15,12 @@ module Payplug
       { :status=>200, 
         :content_type=>'text/xml', 
         :text=>"<notification-acknowledgment xmlns=\"http://checkout.google.com/schema/2\"  serial-number=\"123\" />" }
-    end        
+    end     
+    
+    def error_response
+      { :status => 500, 
+        :text => "Error" }
+    end       
   end
 
 
@@ -30,13 +35,12 @@ module Payplug
     def validate_and_init
       raise InvalidNotificationParamsException unless self.serial_number_notification?
       self.gateway = "google"
-      self.type = "serial-number-notification"
     end
           
     def process
       fetch_fn
       @fn = GoogleCheckout.notification_klass(@params_fn["_type"]).new(:params => @params_fn)
-      save(:as=>:processed)
+      save_as(:processed)
     end
     
     def fetch_fn
@@ -66,12 +70,11 @@ module Payplug
     def validate_and_init
       raise InvalidNotificationParamsException unless self.new_order_notification?
       self.gateway = "google"
-      self.type = notification_type
       self.transaction_id = google_order_number
     end
     
     def process
-      save(:as=>:processed)
+      save_as(:processed)
     end    
   end
   
@@ -84,16 +87,15 @@ module Payplug
     def validate_and_init
       raise InvalidNotificationParamsException unless self.authorization_amount_notification?
       self.gateway = "google"
-      self.type = notification_type
       self.transaction_id = google_order_number
     end
     
     def process
-      save(:as=>:processing)
+      save_as(:processing)
       perform_checks
-      intiate_delivery
+      initiate_delivery
       capture_payment
-      save(:as=>:processed)
+      save_as(:processed)
     end
 
     def perform_checks

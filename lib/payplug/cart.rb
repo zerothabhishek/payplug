@@ -16,6 +16,22 @@ module Payplug
       extended_items = original_items.map{|i| i.extend(Payplug::Item) }     # extend each item with Payplug::Item
       extended_items
     end
-      
+    
+    def finalize_amount
+      gross_amount = self.items.map(&:item_amount).inject(:+)      
+      self.apply_discounts
+      self.apply_shipping_charges
+      amount_attribute = Payplug.cart_klass.payplug_transform[:total_amount].to_sym
+      self.update_attributes(amount_attribute => gross_amount)
+    end  
+    
+    def apply_discounts
+      true
+    end
+    
+    def apply_shipping_charges
+      true
+    end
+    
   end
 end

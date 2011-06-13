@@ -3,7 +3,7 @@ class Order < ActiveRecord::Base
   
   def self.payplug_transform 
     {  :identifier => :id,
-       :total_amount => :amount,    
+       :total_amount => :amount,   
        :success => :mark_order_as_purchased,
        :processed? => :purchased? }
   end

@@ -9,6 +9,10 @@ module Payplug
          end
        end
      end
+     
+     def item_amount
+       self.item_price * self.item_quantity
+     end
         
   end
 end
