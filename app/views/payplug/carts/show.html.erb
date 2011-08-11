@@ -3,7 +3,7 @@
 <table>
 <tr>  <th>Item name</th> 	<th>price</th> 	<th>quantity</th>  </tr>
 
-<% @cart.items.each do |item| %>
+<% @cart._payplug_items.each do |item| %>
   <tr>
 	<td><%= item.item_name %></td> 
 	<td><%= item.item_quantity %></td> 
