@@ -37,7 +37,9 @@ module Payplug
       @@business    = Payplug.config["paypal"]["email"]
       @@secret      = Payplug.config["paypal"]["secret"]
       @@return      = Payplug.return_url
-      @@notify_url  = Payplug::Engine.routes.url_helpers.paypal_url(:host=>Payplug.config["callback_host"])   
+      @@notify_url  = Payplug.config["callback_host"] + "/paypal"
+                     # Removed the below because routes are drawn (paypal_url) after Paplug initialization
+                     # Payplug::Engine.routes.url_helpers.paypal_url(:host=>Payplug.config["callback_host"])   
       
       unless (Rails.env=="production") 
         @@submit_url  = @@sandbox_url

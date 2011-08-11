@@ -37,7 +37,7 @@ module Payplug
   end
   
   def self.read_config
-    config_path = "#{Rails.root}/config/payplug.yml"
+    config_path = "#{Rails.root}/config/payplug/payplug.yml"
     @@config = YAML.load_file(config_path)[Rails.env]
   end
   
