@@ -1,0 +1,20 @@
+<h3>All notifications:</h3>
+
+<table>
+  <th>
+    <td><b>Gateway</b></td>
+    <td><b>Status</b></td>
+    <td><b>Transaction-Id</b></td>
+    <td><b>Created_at</b></td>
+  </th>
+
+  <% @notifications.each do |n| %>
+    <tr>
+      <td><%= n.gateway %></td>
+      <td><%= n.status %></td>
+      <td><%= n.transaction_id %></td>
+      <td><%= n.created_at %></td>
+      <td><%= link_to "=>", notification_path(n) %></td>
+    </tr>
+  <% end %>
+</table>

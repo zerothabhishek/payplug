@@ -1,0 +1,31 @@
+<h3>Notification: <%= @notification.id %></h3>
+
+<div class="gateway">
+  Gateway: <%= @notification.gateway %>
+</div>
+
+<div class="status">
+	Status: <%= @notification.status %>
+</div>
+
+<div class="transaction_id">
+	Transaction_id: <%= @notification.transaction_id %>
+</div>
+
+<div class="created_at">
+	created_at: <%= @notification.created_at %>
+</div>
+
+<div class="updated_at">
+	updated_at: <%= @notification.updated_at %>
+</div>
+
+<div class="params">
+	Params: <br/>
+	<%= @notification.params %>
+</div>
+
+<div class="params_as_yaml">
+	Params as yaml: <br/>
+	<%= @notification.params.to_yaml %>
+</div>

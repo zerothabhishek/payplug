@@ -28,6 +28,12 @@ module Payplug
   mattr_accessor :return_url
   @@return_url = nil
   
+  mattr_accessor :http_basic_username
+  @@http_basic_username = "payplug"
+  
+  mattr_accessor :http_basic_password
+  @@http_basic_password = "payplug"
+  
   mattr_accessor :config
   @@config = nil
 
