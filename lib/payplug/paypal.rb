@@ -41,7 +41,7 @@ module Payplug
                      # Removed the below because routes are drawn (paypal_url) after Paplug initialization
                      # Payplug::Engine.routes.url_helpers.paypal_url(:host=>Payplug.config["callback_host"])   
       
-      unless (Rails.env=="production") 
+      unless (Payplug.env=="production") 
         @@submit_url  = @@sandbox_url
         @@verification_host =  @@verification_host_in_sandbox
       end

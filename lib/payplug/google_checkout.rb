@@ -29,7 +29,7 @@ module Payplug
     def self.init
       @@merchant_id = Payplug.config["google_checkout"]["merchant_id"]
       @@merchant_key = Payplug.config["google_checkout"]["merchant_key"]      
-      @@checkout_host = @@sandbox_host  unless (Rails.env=="production")
+      @@checkout_host = @@sandbox_host  unless (Payplug.env=="production")
       
       @@submit_url = "#{@@checkout_host}/api/checkout/v2/checkoutForm/Merchant/#{@@merchant_id}"
       @@button_url = "#{@@checkout_host}/buttons/checkout.gif?merchant_id=#{@@merchant_id}&w=180&h=46&style=white&variant=text&loc=en_US"

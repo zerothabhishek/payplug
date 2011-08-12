@@ -43,7 +43,7 @@ module Payplug
    end
    
    def test_ipn_in_production?
-     Rails.env=="production" && test_ipn?
+     Payplug.env=="production" && test_ipn?
    end
    
    def genuineness_check

@@ -13,6 +13,9 @@ require "payplug/amazon_checkout"
 
 module Payplug
 
+  mattr_accessor :payplug_env
+  @@payplug_env = "development"
+  
   mattr_accessor :cart_klass
   @@cart_klass = nil
   
@@ -38,7 +41,7 @@ module Payplug
   
   def self.read_config
     config_path = "#{Rails.root}/config/payplug/payplug.yml"
-    @@config = YAML.load_file(config_path)[Rails.env]
+    @@config = YAML.load_file(config_path)[Payplug.env]
   end
   
   def self.find_cart(id)
