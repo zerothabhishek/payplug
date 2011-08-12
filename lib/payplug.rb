@@ -13,8 +13,8 @@ require "payplug/amazon_checkout"
 
 module Payplug
 
-  mattr_accessor :payplug_env
-  @@payplug_env = "development"
+  mattr_accessor :env
+  @@env = "development"
   
   mattr_accessor :cart_klass
   @@cart_klass = nil
