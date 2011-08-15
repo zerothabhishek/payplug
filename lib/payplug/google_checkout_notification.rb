@@ -7,6 +7,7 @@ module Payplug
         
     def self.preprocess(parameters)
       snn = SerialNumberNotification.new(:params => parameters)
+      snn.save_as(:unprocessed)
       snn.process
       full_notification = snn.fn
     end
@@ -56,7 +57,7 @@ module Payplug
                :user      => Payplug::GoogleCheckout.merchant_id, 
                :password  => Payplug::GoogleCheckout.merchant_key, 
                :payload   => data      }
-      response = RestClient::Request.execute(args)                    
+      response = ::RestClient::Request.execute(args)                    
     end
     
   end
@@ -137,7 +138,7 @@ module Payplug
                 :password => Payplug::GoogleCheckout.merchant_key, 
                 :payload  => data      }
                 
-       response = RestClient::Request.execute(args)                        
+       response = ::RestClient::Request.execute(args)                        
        response_hash = Rack::Utils.parse_query(response)
        raise ChargeAndShipOrderCommandException  if(response_hash["_type"] != "request-received")
        response_hash
