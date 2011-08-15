@@ -7,6 +7,7 @@ module Payplug
     
     initializer 'payplug.init' do 
       require "#{Rails.root}/config/payplug/payplug.rb"
+      require "#{Rails.root}/config/payplug/payplug_helper.rb"
     end
     
     # Removed this to go with the defaults, for the fear of breaking stuff by chaning initialization sequence.
