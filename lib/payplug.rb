@@ -1,3 +1,4 @@
+require 'rest_client'  # because the gem name is rest-client
 require 'net/http'
 require 'net/https'
 require 'uri'
