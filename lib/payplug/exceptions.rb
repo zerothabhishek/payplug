@@ -21,7 +21,7 @@ module Payplug
   class GoogleCheckoutNotificationException < NotificationException
   end
   
-  class InvalidParametersException < GoogleCheckoutNotificationException
+  class InvalidNotificationParamsException < GoogleCheckoutNotificationException
   end
 
   class NotificationHistoryRequestException < GoogleCheckoutNotificationException

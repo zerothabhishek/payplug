@@ -101,7 +101,7 @@ module Payplug
 
     def perform_checks
       cart_existence_check
-      order_amount_match_check      
+      order_amount_match_check
       financial_order_state_check
     end
 

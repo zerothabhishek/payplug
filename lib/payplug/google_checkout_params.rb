@@ -34,31 +34,31 @@ module Payplug
     
     ## getters
     def serial_number
-      params["serial-number"]
+      params and params["serial-number"]
     end
 
     def notification_type
-      params["_type"]
+      params and params["_type"]
     end
      
     def google_order_number
-      params["google-order-number"]
+      params and params["google-order-number"]
     end    
 
     def financial_order_state
-      params["order-summary.financial-order-state"]
+      params and params["order-summary.financial-order-state"]
     end
 
     def authorization_amount
-      params["authorization-amount"]
+      params and params["authorization-amount"]
     end
     
     def authorization_currency
-      params["authorization-amount.currency"]
+      params and params["authorization-amount.currency"]
     end
     
     def cart_id
-      params["order-summary.shopping-cart.merchant-private-data"]
+      params and params["order-summary.shopping-cart.merchant-private-data"]
     end
     
     def cart
