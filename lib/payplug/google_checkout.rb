@@ -42,7 +42,7 @@ module Payplug
         when "new-order-notification"             ; NewOrderNotification
         when "authorization-amount-notification"  ; AuthorizationAmountNotification
         when "order-state-change-notification"    ; OrderStateChangeNotification
-        else                                      ; OtherNotification
+        else                                      ; GoogleCheckoutNotification
       end
     end  
       

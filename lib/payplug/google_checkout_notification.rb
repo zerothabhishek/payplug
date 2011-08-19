@@ -15,7 +15,7 @@ module Payplug
     def acknowledgement
       { :status=>200, 
         :content_type=>'text/xml', 
-        :text=>"<notification-acknowledgment xmlns=\"http://checkout.google.com/schema/2\"  serial-number=\"123\" />" }
+        :text=>"<notification-acknowledgment xmlns=\"http://checkout.google.com/schema/2\"  serial-number=\"#{serial_number}\" />" }
     end     
     
     def error_response
