@@ -1,7 +1,6 @@
 module Payplug
   class Notification < ActiveRecord::Base
-    serialize :params
-    
+
     def self.duplicates(n)
       self.where(:transaction_id=>n.transaction_id, :gateway => n.gateway)
     end
@@ -10,7 +9,11 @@ module Payplug
       self.status = status_given
       save
     end
-        
+    
+    def params
+      @params ||= (Rack::Utils.parse_query(self.raw_params) || {})
+    end
+    
     def cart(id)
       begin
         @cart ||= Payplug.find_cart(id)

@@ -1,3 +1,4 @@
+# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -10,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110610054135) do
+ActiveRecord::Schema.define(:version => 20110831140343) do
 
   create_table "line_items", :force => true do |t|
     t.integer  "price"
@@ -33,13 +34,13 @@ ActiveRecord::Schema.define(:version => 20110610054135) do
   end
 
   create_table "payplug_notifications", :force => true do |t|
-    t.text     "params"
     t.string   "gateway"
     t.string   "transaction_id"
     t.string   "status",         :default => ""
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "type"
+    t.text     "raw_params"
   end
 
 end

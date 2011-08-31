@@ -6,7 +6,7 @@ module Payplug
    include PaypalParams
    
    def self.preprocess(parameters)
-     pn = self.new(:params=>parameters, :gateway=>"paypal")
+     pn = self.new(:raw_params=>parameters, :gateway=>"paypal")
    end
    
    def acknowledgement

@@ -45,7 +45,13 @@ module Payplug
         else                                      ; GoogleCheckoutNotification
       end
     end  
-      
+    
+    
+    def self.notification_type(raw_notification)
+      notification_params = Rack::Utils.parse_query(raw_notification)
+      notification_type = notification_params["_type"]
+    end
+        
   end
   
 end

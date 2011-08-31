@@ -5,12 +5,12 @@ module Payplug
   class GoogleCheckoutNotification < Notification
     include Payplug::GoogleCheckoutParams
         
-    def self.preprocess(parameters)
-      snn = SerialNumberNotification.new(:params => parameters)
-      snn.save_as(:unprocessed)
-      snn.process
-      full_notification = snn.fn
-    end
+    #def self.preprocess(parameters)
+    #  snn = SerialNumberNotification.new(:params => parameters)
+    #  snn.save_as(:unprocessed)
+    #  snn.process
+    #  full_notification = snn.fn
+    #end
           
     def acknowledgement
       { :status=>200, 
@@ -22,6 +22,12 @@ module Payplug
       { :status => 500, 
         :text => "Error" }
     end       
+    
+    def process
+      self.save_as(:unidentified)
+      Rails.logger.warn "Tried processing unidentified notification #{self.id}"      
+    end
+    
   end
 
 
@@ -30,23 +36,16 @@ module Payplug
   class SerialNumberNotification < GoogleCheckoutNotification    
     after_initialize :validate_and_init
     
-    attr_reader :fn   # the Full Notification corresponding to the serial number
-    @params_fn = {}
-    
     def validate_and_init
       raise InvalidNotificationParamsException unless self.serial_number_notification?
       self.gateway = "google"
     end
-          
-    def process
-      fetch_fn
-      @fn = GoogleCheckout.notification_klass(@params_fn["_type"]).new(:params => @params_fn)
-      save_as(:processed)
-    end
     
     def fetch_fn
-      response = send__notification_history_request          
-      @params_fn = Rack::Utils.parse_query(response)
+      fn_raw = send__notification_history_request
+      fn_type = GoogleCheckout.notification_type(fn_raw)
+      fn_klass = GoogleCheckout.notification_klass(fn_type)
+      @fn = fn_klass.new(:raw_params => fn_raw)
     end
         
     def send__notification_history_request
@@ -57,7 +56,12 @@ module Payplug
                :user      => Payplug::GoogleCheckout.merchant_id, 
                :password  => Payplug::GoogleCheckout.merchant_key, 
                :payload   => data      }
-      response = ::RestClient::Request.execute(args)                    
+      begin
+        response = ::RestClient::Request.execute(args)                    
+      rescue => e
+        Rails.logger.error "|--- Args:#{args}, Response:#{response}, Exception:#{e.class.to_s} ---|"
+        ""
+      end
     end
     
   end

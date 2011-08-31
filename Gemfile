@@ -1,6 +1,7 @@
 source "http://rubygems.org"
 
-gem 'rails', '3.1.0.rc1'
+gem 'rails', '3.1.0.rc6'
+gem 'sprockets', '2.0.0.beta.13' # because of a problem with sprockets 2.0.0/rails. It is fixed in rails > 3.1.0.rc8
 
 # Bundle edge Rails instead:
 # gem 'rails',     :path => 'git://github.com/rails/rails.git'
