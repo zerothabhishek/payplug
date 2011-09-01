@@ -36,9 +36,9 @@ module Payplug
       self.gateway ||= "google"
     end
     
-    def valid?
-      self.serial_number_notification?
-    end
+    #def is_valid?
+    #  self.serial_number_notification?
+    #end
     
     def fetch_fn
       fn_raw = send__notification_history_request
@@ -83,9 +83,9 @@ module Payplug
       self.transaction_id = google_order_number
     end
     
-    def valid?
-      self.new_order_notification?
-    end
+    #def is_valid?
+    #  self.new_order_notification?
+    #end
     
     def process
       save_as(:processed)
@@ -110,9 +110,9 @@ module Payplug
       self.transaction_id = google_order_number
     end
     
-    def valid?
-      self.authorization_amount_notification?
-    end
+    #def is_valid?
+    #  self.authorization_amount_notification?
+    #end
     
     def process
       save_as(:processing)
