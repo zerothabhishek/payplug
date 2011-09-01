@@ -1,0 +1,24 @@
+<h3> Cart Details </h3>
+
+<p>
+  Cart Id:
+  <%= @cart.identifier %>
+</p>
+
+<p>
+  Total amount:
+  <%= @cart.total_amount %>
+</p>
+
+<table>
+  <tr>  <th>Item name</th> 	<th>price</th> 	<th>quantity</th>  </tr>
+  <% @cart._payplug_items.each do |item| %>
+  <tr>
+    <td><%= item.item_name %></td> 
+    <td><%= item.item_quantity %></td> 
+    <td><%= item.item_price %></td>
+  </tr>	 
+  <% end %>	
+</table>
+
+<%= link_to "more", carts_path %>

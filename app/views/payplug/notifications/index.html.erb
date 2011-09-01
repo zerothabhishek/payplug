@@ -5,7 +5,7 @@
     <td><b>Gateway</b></td>
     <td><b>Status</b></td>
     <td><b>Transaction-Id</b></td>
-    <td><b>Created_at</b></td>
+    <td><b>Updated at</b></td>
   </th>
 
   <% @notifications.each do |n| %>
@@ -13,10 +13,10 @@
       <td><%= n.gateway %></td>
       <td><%= n.status %></td>
       <td><%= n.transaction_id %></td>
-      <td><%= n.created_at %></td>
+      <td><%= n.updated_at %></td>
       <td><%= link_to "=>", notification_path(n) %></td>
     </tr>
   <% end %>
 </table>
 
-<%= link_to "more", notifications_path(:page => @page+1) %>
+<%= link_to "more", notifications_path(:page => @page[:page_no]+1) %>

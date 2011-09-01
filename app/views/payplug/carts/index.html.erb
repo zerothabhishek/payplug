@@ -1,0 +1,19 @@
+<h3>All Carts:</h3>
+
+<table>
+  <th>
+    <td><b>Cart Id</b></td>
+    <td><b>Status</b></td>
+    <td><b>Updated at</b></td>
+  </th>
+
+  <% @carts.each do |c| %>
+    <tr>
+      <td><%= link_to c.id, details_cart_path(c) %></td>
+      <td><%= c.processed? ? "Processed" : "Not-processed" %></td>
+      <td><%= c.updated_at %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to "more", carts_path(:page => @page[:page_no]+1) %>
