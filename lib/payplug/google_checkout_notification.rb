@@ -4,13 +4,6 @@ module Payplug
   
   class GoogleCheckoutNotification < Notification
     include Payplug::GoogleCheckoutParams
-        
-    #def self.preprocess(parameters)
-    #  snn = SerialNumberNotification.new(:params => parameters)
-    #  snn.save_as(:unprocessed)
-    #  snn.process
-    #  full_notification = snn.fn
-    #end
           
     def acknowledgement
       { :status=>200, 
@@ -30,15 +23,21 @@ module Payplug
     
   end
 
-
-
-
   class SerialNumberNotification < GoogleCheckoutNotification    
-    after_initialize :validate_and_init
+    #after_initialize :validate_and_init
+    after_initialize :after_init
     
-    def validate_and_init
-      raise InvalidNotificationParamsException unless self.serial_number_notification?
-      self.gateway = "google"
+    #def validate_and_init
+    # raise InvalidNotificationParamsException unless self.serial_number_notification?
+    # self.gateway = "google"
+    #end
+    
+    def after_init
+      self.gateway ||= "google"
+    end
+    
+    def valid?
+      self.serial_number_notification?
     end
     
     def fetch_fn
@@ -70,12 +69,22 @@ module Payplug
 
 
   class NewOrderNotification < GoogleCheckoutNotification      
-    after_initialize :validate_and_init
+    #after_initialize :validate_and_init
+    after_initialize :after_init
     
-    def validate_and_init
-      raise InvalidNotificationParamsException unless self.new_order_notification?
-      self.gateway = "google"
+    #def validate_and_init
+    #  raise InvalidNotificationParamsException unless self.new_order_notification?
+    #  self.gateway = "google"
+    #  self.transaction_id = google_order_number
+    #end
+    
+    def after_init
+      self.gateway ||= "google"
       self.transaction_id = google_order_number
+    end
+    
+    def valid?
+      self.new_order_notification?
     end
     
     def process
@@ -87,12 +96,22 @@ module Payplug
   
   
   class AuthorizationAmountNotification < GoogleCheckoutNotification  
-    after_initialize :validate_and_init
+    #after_initialize :validate_and_init
+    after_initialize :after_init
     
-    def validate_and_init
-      raise InvalidNotificationParamsException unless self.authorization_amount_notification?
-      self.gateway = "google"
+    #def validate_and_init
+    #  raise InvalidNotificationParamsException unless self.authorization_amount_notification?
+    #  self.gateway = "google"
+    #  self.transaction_id = google_order_number
+    #end
+    
+    def after_init
+      self.gateway ||= "google"
       self.transaction_id = google_order_number
+    end
+    
+    def valid?
+      self.authorization_amount_notification?
     end
     
     def process
