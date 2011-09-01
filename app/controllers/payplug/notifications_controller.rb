@@ -4,9 +4,13 @@ module Payplug
     def index
       authenticate
       @session = request.session
-      @page = params[:page].to_i || 1
+
+      # basic pagination logic
       per_page = 20
+      @page = params[:page].to_i
+      @page = 1   if @page==0
       offset = (@page-1)*per_page
+
       @notifications = Notification.order("updated_at DESC").limit(per_page).offset(offset)
     end
     
