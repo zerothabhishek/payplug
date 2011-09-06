@@ -2,7 +2,7 @@ module Payplug
   
   class PayplugException < Exception
     def handle
-      Rails.logger.error self.message + self.backtrace
+      Rails.logger.error self.message + self.backtrace.join(';')
     end
   end
   
