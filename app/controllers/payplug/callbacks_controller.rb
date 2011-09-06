@@ -8,8 +8,8 @@ module Payplug
         # The rack.request.form_hash probably has bugs and has given wrong results with google checkout 
         # Replaced the above line of code with the two below 
         parameters_str = request.raw_post
-        parameters = Rack::Utils.parse_query(parameters_str)
-        notification = Payplug::PaypalNotification.preprocess(parameters)
+        notification = PaypalNotification.new(:raw_params=>parameters_str, :gateway=>"paypal")
+        notification.save_as(:unprocessed)
         notification.process
         render notification.acknowledgement
       rescue PayplugException => e
@@ -30,12 +30,10 @@ module Payplug
         parameters_str = request.raw_post
         snn = SerialNumberNotification.new(:raw_params => parameters_str)
         snn.save_as(:unprocessed)
-        render snn.acknowledgement
-
         full_notification = snn.fetch_fn
-        snn.save_as(:processed)
-        
+        snn.save_as(:processed)        
         full_notification.process
+        render snn.acknowledgement
       rescue PayplugException => e
         e.handle
         render notification.error_response
