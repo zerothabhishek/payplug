@@ -4,11 +4,11 @@ module Payplug
     # POST /payplug/paypal
     def paypal
       begin
-        parameters = request.env["rack.request.form_hash"]
+        #parameters = request.env["rack.request.form_hash"]
         # The rack.request.form_hash probably has bugs and has given wrong results with google checkout 
-        # Replace the above line of code with the two below -
-        #   parameters_str = request.raw_post
-        #   parameters = Rack::Utils.parse_query(parameters_str)
+        # Replaced the above line of code with the two below 
+        parameters_str = request.raw_post
+        parameters = Rack::Utils.parse_query(parameters_str)
         notification = Payplug::PaypalNotification.preprocess(parameters)
         notification.process
         render notification.acknowledgement
